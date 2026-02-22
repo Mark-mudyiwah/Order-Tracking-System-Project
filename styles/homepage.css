@@ -1,56 +1,40 @@
-/* ================================
-   GLOBAL
-================================= */
 
-* {
-  box-sizing: border-box;
+button{
+    background-color: #148fc0;
+    color: white;
 }
+table {
+    table-layout: fixed;
+    width: 100%;
+}*/
 
-body {
-  margin: 0;
-  font-family: Roboto, Arial, sans-serif;
-}
-
-button {
-  background-color: #148fc0;
-  color: white;
-  cursor: pointer;
-}
-
-/* ================================
-   HEADER
-================================= */
-
+/* HEADER */
 .page-header {
-  margin-bottom: 20px;
-  padding: 0 16px;
+    margin-bottom: 20px;
 }
 
 .page-header h1 {
-  font-size: 28px;
-  font-weight: 700;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-/* ================================
-   TABLE
-================================= */
-
+/* TABLE */
 .orders-table {
-  background: white;
-  border-radius: 12px;
-  overflow-x: auto; /* 🔥 important for mobile */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  min-width: 700px; /* prevents breaking */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 thead {
-  background-color: rgb(84, 40, 245);
+   background-color: rgb(84, 40, 245);
+    
 }
 
 th, td {
@@ -66,53 +50,63 @@ th {
   color: white;
 }
 
-tbody tr:hover {
-  background: #f9fafc;
+tbody tr {
+    border-bottom: 1px solid #eee;
 }
 
-/* ================================
-   PAGE TITLES
-================================= */
+tbody tr:hover {
+    background: #f9fafc;
+}
+ 
+.add-orders-text{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    
+}
 
+/* Page heading */
 .add-orders-text {
+  display: block;
   text-align: center;
   font-size: 28px;
   font-weight: 800;
+ 
   margin-top: 20px;
 }
 
 .date-container {
+  display: block;
   text-align: center;
   margin-top: 6px;
   font-size: 14px;
   color: #a11616;
 }
 
-/* ================================
-   FORM SECTION
-================================= */
-
+/* Main wrapper */
 .button-template-container {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  padding: 0 16px;
 }
 
+/* Card */
 .order-addition-template {
   width: 100%;
-  max-width: 1000px;
   background-color: #f7f7fb;
   padding: 18px 20px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap; /* 🔥 allows wrapping */
+  align-items: center;
+  
+ 
 }
 
+/* Label text */
 .temp-property-text {
   font-size: 16px;
   font-weight: 600;
@@ -121,34 +115,28 @@ tbody tr:hover {
   display: block;
 }
 
-/* Inputs */
-
+/* Inputs & select */
 .id-input,
 .address-input,
 .note-input,
 .order-type-select {
   width: 100%;
-  min-width: 180px;
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-family: roboto;
   font-size: 14px;
 }
 
-input:focus,
-select:focus {
-  outline: none;
-  border: 1px solid blue;
-}
+ 
 
-/* ================================
-   ADD BUTTON
-================================= */
 
+ 
+/* Add button */
 .add-button-container {
   display: flex;
   justify-content: center;
-  margin: 40px 0 100px;
+  margin-bottom: 100px;
 }
 
 .add-order-button {
@@ -159,131 +147,133 @@ select:focus {
   border: none;
   background-color: rgb(31, 110, 214);
   color: white;
+  cursor: pointer;
+  font-family: roboto;
+
 }
 
 .add-order-button:hover {
   background-color: rgb(33, 160, 71);
 }
+ 
 
-/* ================================
-   TODAY ORDERS
-================================= */
-
-.today-orders-heading {
-  font-size: 25px;
-  font-weight: 800;
-  text-align: center;
+ 
+input:focus{
+    outline: none;
+    border: 1px solid blue;
 }
 
-.added-orders-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  row-gap: 30px;
-  padding: 0 16px;
+ 
+select:focus{
+       outline: none;
+    border: 1px solid blue;
 }
 
-.added-order-container {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap; /* 🔥 stacks on mobile */
+ 
+ 
+ 
+.today-orders-heading{
+    font-size: 25px;
+    font-weight: 800;
+    
+    
 }
 
-/* ================================
-   DASHBOARD BUTTON
-================================= */
+.added-orders-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 50px;
+    row-gap: 30px;
 
-.open-dashboard-button-container {
-  margin-top: 26px;
-  display: flex;
-  justify-content: center;
 }
 
-.open-dashboard-button {
-  padding: 10px 16px;
-  background-color: rgb(25, 109, 206);
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
+.added-order-container{
+    display: flex;
+    justify-content: space-between;
+   
 }
 
-.open-dashboard-button:hover {
-  background-color: rgb(33, 160, 71);
+.open-dashboard-button-container{
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
 }
 
-/* ================================
-   ERROR MESSAGE
-================================= */
+.open-dashboard-button{
+ padding:  10px 16px;
+    background-color: rgb(25, 109, 206);
+    color: white;
+    font-size:15px ;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.open-dashboard-button:hover{
+    background-color: rgb(33, 160, 71);
+}
 
 .customer-details-container,
-.order-id-container {
-  position: relative;
+.order-id-container{
+    position: relative;
 }
 
-.error-span {
-  color: red;
-  font-size: 12px;
-  position: absolute;
-  left: 6px;
-  bottom: -15px;
+.error-span{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    left: 6px;
+    bottom: -15px;
 }
 
-/* ================================
-   RESPONSIVE BREAKPOINTS
-================================= */
 
-/* Tablets */
-@media (max-width: 1024px) {
+ 
+@media (max-width: 780px) {
 
-  .order-addition-template {
+  .order-addition-template{
     flex-direction: column;
+    border:1px solid blue ;
+    gap: 12px;
+    
   }
 
-  .added-order-container {
-    flex-direction: column;
-  }
-
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-
-  th, td {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  .add-orders-text {
-    font-size: 22px;
-  }
-
-  .today-orders-heading {
-    font-size: 20px;
-  }
-
-  .add-order-button {
+  .order-id-container,
+  .customer-details-container,
+  .order-type-container{
     width: 100%;
-    max-width: 300px;
   }
+
+  
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+thead {
+   background-color: rgb(84, 40, 245);
+    font-size: 12px;
+}
+
+ 
+
+th {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+}
+ 
+
 
 }
 
-/* Small Phones */
-@media (max-width: 480px) {
 
-  body {
-    font-size: 14px;
-  }
 
-  .page-header h1 {
-    font-size: 20px;
-  }
-
-}
