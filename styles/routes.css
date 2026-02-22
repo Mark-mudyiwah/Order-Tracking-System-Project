@@ -1,0 +1,167 @@
+ 
+ td{
+    text-align: center;
+ }
+
+
+.routes-dash-text {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+    
+}
+
+/* Routes Grid */
+.routes-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    padding: 30px;
+}
+
+/* Route Card */
+.route-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #2563eb;
+}
+
+.route-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+.route-card h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #1e3a8a;
+}
+
+/* Progress Section */
+.progress-container {
+    margin: 15px 0 20px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+}
+
+.progress-bar {
+    background-color: #e2e8f0;
+    border-radius: 20px;
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    border-radius: 20px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Orders Table */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.orders-table th {
+    text-align: center;
+    padding: 10px;
+    background-color: #eff6ff;
+    color: #1e3a8a;
+    font-weight: 600;
+    border-bottom: 2px solid #dbeafe;
+}
+
+.orders-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.orders-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Status Badges */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Blue-based status variations */
+.status.pending {
+    background-color: #f59e0b; /* amber */
+}
+
+.status.in-progress {
+    background-color: #3b82f6; /* blue */
+}
+
+.status.completed {
+    background-color: #16a34a; /* green */
+}
+
+
+.view-all-button{
+    display: flex;
+    justify-content: center;
+   margin-top: 10px;
+   background-color: #1e88e5;
+    padding: 6px 8px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+   
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+
+}
+
+.map-container iframe {
+    width: 90%;
+    height: 100%;
+    border: none;
+}
+
+.back-to-dashboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #1e88e5;
+    font-weight: 700;
+}
+
+.site-footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b; /* soft slate blue */
+    background-color: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+}

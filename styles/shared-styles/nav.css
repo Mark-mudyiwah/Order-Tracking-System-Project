@@ -1,0 +1,9 @@
+.site-footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b; /* soft slate blue */
+    background-color: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+}

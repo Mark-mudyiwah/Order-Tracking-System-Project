@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/shared-styles/header.css">
+  <link rel="stylesheet" href="styles/shared-styles/nav.css">
+  
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="system-name-text">
+      Online Orders Control Panel
+    </div>
+    <div class="on-the-go-text">
+      Goodhope On The Go
+    </div>
+
+
+  </div>
+
+  <div class="dashboard-text-container">
+    <img src="icons/dashboard-icon.png">
+    <span class="dash-board-text">
+      Dashboard
+    </span>
+
+  </div>
+
+  <div class="orders-status-container-primary">
+
+    <div class="order-status-container all-orders-card">
+      <img src="icons/total-orders-icon.png">
+      <span class=" status-count js-total-orders"></span>
+      <span class="status-type-text">Total Orders</span>
+      <a  href="orders.html" class="view-button">View</a>
+      </div>
+
+
+
+    <div class="order-status-container processing-orders-card">
+      <img src="icons/checked-orders-icon.png">
+      <span class=" status-count js-active-orders"></span>
+      <span class="status-type-text">Active Orders</span>
+      <a  href="orders.html" class="view-button">View</a>
+    </div>
+
+    <div class="order-status-container pickup-orders-card">
+      <img src="icons/collection-orders-icon.png">
+      <span class=" status-count js-collection-orders"></span>
+      <span class="status-type-text">Instore Pickup</span>
+    <a  href="orders.html" class="view-button">View</a>
+    </div>
+
+    <div class="order-status-container bank-orders-card">
+      <img src="icons/bank-transfare-icon.png">
+      <span class=" status-count js-unpaid-orders" >01</span>
+      <span class="status-type-text ">Awaiting Payment</span>
+     <a  href="orders.html" class="view-button">View</a>
+    </div>
+
+
+    <div class="order-status-container ready-orders-card">
+      <img src="icons/dispatched-orders-icon.png">
+      <span class=" status-count js-checked-orders"></span>
+      <span class="status-type-text">Ready to Go</span>
+     <a  href="orders.html" class="view-button">View</a>
+    </div>
+
+  </div>
+
+   <span class="orders-processing-text">Orders in Process</span>
+ 
+<div class="processing-orders-text-container">
+ 
+ <input type= "number" class="search-input-container" placeholder="Search order by Id">
+</div>
+ 
+
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Address</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Update Status</th>
+      </tr>
+    </thead>
+
+    <tbody class="js-processing-orders-container">
+
+    </tbody>
+  </table>
+
+
+
+  <!--  <div class="processing-orders-container-primary">
+       <div class="processing-order-container">
+        <span>Order Id:</span>
+        <span>Address:</span>
+        <span>Type:</span>
+        <span>Order Status:</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update Order:</span>
+       </div>
+ 
+      <div class="processing-order-container">
+
+        <span>60656</span>
+        <span>Lansdowne</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Collected</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+          <input placeholder="Enter items to follow">  
+
+         <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+      <div class="processing-order-container">
+
+        <span>60656</span>
+        <span>Chatsworth</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Collected</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+            <input placeholder="Enter items to follow"> 
+
+        <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60654</span>
+        <span>Atlantis</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+        
+
+         <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60656</span>
+        <span>Lansdowne</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+       
+
+         <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60659</span>
+        <span>Athlone</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+         
+
+          <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60656</span>
+        <span>Milnerton</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+          
+
+         <button class="save-changes-button">Save Changes</button>
+      </div>
+
+
+
+      <div class="processing-order-container">
+
+        <span>60661</span>
+        <span>Parklands</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+        
+
+        <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60656</span>
+        <span>Boo kaap</span>
+        <span>Collection</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+          
+
+         <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+      <div class="processing-order-container">
+
+        <span>60666</span>
+        <span>Edgemead</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+         
+
+          <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+
+      <div class="processing-order-container">
+
+        <span>60663</span>
+        <span>Strand</span>
+        <span>Bank Trans</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+ 
+
+           <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+
+      <div class="processing-order-container">
+
+        <span>60670</span>
+        <span>Rondebosch</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+        
+
+          <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+
+
+      <div class="processing-order-container">
+
+        <span>60676</span>
+        <span>Belhar</span>
+        <span>Delivery</span>
+         <select class="order-status-select">
+             <option value="delivery" selected disabled>Change Status</option>
+             <option value="Checked">Checked</option>
+             <option value="Partial">Paid</option>
+             <option value="Partial">Missing item</option>
+            
+           </select>
+
+          
+
+           <button class="save-changes-button">Save Changes</button>
+
+      </div>
+
+
+    </div>-->
+
+
+  <a class="completed-routes-text" href="routes.html">
+    View Completed Routes
+
+  </a>
+
+  <footer class="site-footer">
+    © 2026 Mark D-137 • Internal Use Only
+</footer>
+
+<script src="scripts/data/dashboard.js" type="module"></script>
+
+
+</body>
+
+</html>

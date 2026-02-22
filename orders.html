@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Orders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="styles/orders.css">
+  <link rel="stylesheet" href="styles/shared-styles/header.css">
+  <link rel="stylesheet" href="styles/shared-styles/nav.css">
+  
+</head>
+<body>
+
+     <div class="header">
+    <div class="system-name-text">
+      Online Orders Control Panel
+    </div>
+    <div class="on-the-go-text">
+      Goodhope On The Go
+    </div>
+
+
+  </div>
+    <!-- PAGE TITLE -->
+    <header class="page-header">
+        <h1>📦 All Orders</h1>
+    </header>
+
+    <!-- SUMMARY CARDS -->
+    <section class="summary-cards">
+        <div class="card total-card ">Total<br>
+            <span  class = "js-total-orders">0</span>
+        </div>
+        <div class="card checked-card ">Checked<br>
+            <span class = "js-checked-orders">0</span>
+        </div>
+        <div class="card unpaid-card ">Unpaid<br>
+            <span  class = "js-unpaid-orders">0</span>
+        </div>
+        <div class="card collection-card ">Collections<br> 
+            <span class = "js-collection-orders">0</span>
+        </div>
+         <div class="card dispatched-card">
+    Dispatched<br>
+    <span class="js-dispatched-orders">0</span>
+        </div>
+        <div class="card incomplete-card">Missing Items<br>
+            <span  class = "js-incomplete-orders">0</span>
+        </div>
+ 
+
+    </section> 
+
+    <div class="orders-filter-container">
+  
+  <!-- Date Filter -->
+  <div class="filter-item">
+    <label for="filter-date">Date:</label>
+    <input type="date" id="filter-date" class="js-date-input">
+  </div>
+
+  <!-- Status Filter -->
+  <div class="filter-item">
+    <label for="filter-status">Status:</label>
+    <select id="filter-status" class="js-filter-select">
+      
+       
+      <option value="All" selected>All</option> 
+      <option value="completed">Completed</option>
+      <option value="dispatched">Dispatched</option>
+      <option value="returned">Returned</option>
+      <option value="paid">Paid</option>
+      <option value="awaiting-payment">Awaiting Payment</option>
+      <option value="collections">Collections</option>
+      <option value="missing_items">Missing Items</option>
+    </select>
+  </div>
+
+  <!-- Search / Quick Filter -->
+  <div class="filter-item">
+    <label for="search-orders">Search Order:</label>
+    <input type="text" id="search-orders" placeholder="Order ID or Customer"
+    class="js-id-filter-input">
+  </div>
+
+  <!-- Apply / Reset Buttons -->
+  <div class="filter-actions">
+    <button class="apply-filter js-apply-filter-button">Apply</button>
+    <button class="reset-filter js-reset-filter-button">Reset</button>
+  </div>
+
+</div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th class="order-id">Order Id</th>
+                <th class="order-address">Address</th>
+                <th class="order-date">Date Added</th>
+                <th class="order-status">Status</th>
+                <th class="order-status"> Delivery Type</th>
+                <th class="order-update">View / Update</th>
+            </tr>
+        </thead>
+        <tbody class="js-orders-data-container">
+
+   
+        </tbody>
+    </table>
+
+    
+<a href= "Dashboard.html"class="back-to-dashboard">
+    <span>Back To DashBoard</span></a>
+    
+<footer class="site-footer">
+    © 2026 Mark D-137 • Internal Use Only
+</footer>
+
+<script src=" https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+<script src="./scripts/data/orders.js" type="module"></script>
+
+</body>
+</html>

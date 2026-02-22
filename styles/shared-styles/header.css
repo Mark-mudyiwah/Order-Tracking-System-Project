@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    padding: 10px;
+     color: #333;
+    padding-top:70px ;
+}
+
+.header {
+    background: linear-gradient(90deg, rgb(84, 40, 245),purple,blue);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    font-size: 22px;
+    position: fixed;
+    inset: 0;
+    padding: 0 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

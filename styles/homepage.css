@@ -1,0 +1,289 @@
+/* ================================
+   GLOBAL
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+button {
+  background-color: #148fc0;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================================
+   HEADER
+================================= */
+
+.page-header {
+  margin-bottom: 20px;
+  padding: 0 16px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ================================
+   TABLE
+================================= */
+
+.orders-table {
+  background: white;
+  border-radius: 12px;
+  overflow-x: auto; /* 🔥 important for mobile */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width: 700px; /* prevents breaking */
+}
+
+thead {
+  background-color: rgb(84, 40, 245);
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+}
+
+tbody tr:hover {
+  background: #f9fafc;
+}
+
+/* ================================
+   PAGE TITLES
+================================= */
+
+.add-orders-text {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.date-container {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #a11616;
+}
+
+/* ================================
+   FORM SECTION
+================================= */
+
+.button-template-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0 16px;
+}
+
+.order-addition-template {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #f7f7fb;
+  padding: 18px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* 🔥 allows wrapping */
+}
+
+.temp-property-text {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+  display: block;
+}
+
+/* Inputs */
+
+.id-input,
+.address-input,
+.note-input,
+.order-type-select {
+  width: 100%;
+  min-width: 180px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+/* ================================
+   ADD BUTTON
+================================= */
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 100px;
+}
+
+.add-order-button {
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(31, 110, 214);
+  color: white;
+}
+
+.add-order-button:hover {
+  background-color: rgb(33, 160, 71);
+}
+
+/* ================================
+   TODAY ORDERS
+================================= */
+
+.today-orders-heading {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.added-orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  row-gap: 30px;
+  padding: 0 16px;
+}
+
+.added-order-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* 🔥 stacks on mobile */
+}
+
+/* ================================
+   DASHBOARD BUTTON
+================================= */
+
+.open-dashboard-button-container {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.open-dashboard-button {
+  padding: 10px 16px;
+  background-color: rgb(25, 109, 206);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.open-dashboard-button:hover {
+  background-color: rgb(33, 160, 71);
+}
+
+/* ================================
+   ERROR MESSAGE
+================================= */
+
+.customer-details-container,
+.order-id-container {
+  position: relative;
+}
+
+.error-span {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  left: 6px;
+  bottom: -15px;
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+================================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  .order-addition-template {
+    flex-direction: column;
+  }
+
+  .added-order-container {
+    flex-direction: column;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  th, td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .add-orders-text {
+    font-size: 22px;
+  }
+
+  .today-orders-heading {
+    font-size: 20px;
+  }
+
+  .add-order-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+}

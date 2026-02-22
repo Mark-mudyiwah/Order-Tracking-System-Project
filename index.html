@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/homepage.css">
+  <link rel="stylesheet" href="styles/shared-styles/header.css">
+  <link rel="stylesheet" href="styles/shared-styles/nav.css">
+  
+</head>
+<body>
+    <div class = "header">
+         <div class="system-name-text">
+          Online  Orders Control Panel
+        </div>
+        <div class="on-the-go-text">
+          Goodhope On The Go
+        </div>
+       
+
+    </div>
+
+    <span class="add-orders-text">
+        Add Orders for Today
+     </span>
+
+    <span class=" date-container js-date-container">
+        
+    </span>
+
+    <div class="button-template-container">
+
+    <div class="order-addition-template">
+        <div class="order-id-container">
+            <span class="temp-property-text">Order Id:</span>
+            <input class="id-input js-order-id-input" type="text"
+             placeholder="Enter order number"
+             inputmode="numeric" 
+             pattern="[0-9]{5}"
+             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+             required>
+               <span class="error-span js-id-error-span"></span>
+            </div>
+        <div class="customer-details-container">
+            <span class="temp-property-text">
+              Address:
+            </span>
+             <input class="address-input js-order-address-input" type="text"
+             placeholder=" Enter Customer address"
+             required>
+             <span class="error-span js-address-error-span "></span>
+        </div>
+        <div class="order-type-container">
+            <span class="temp-property-text">Delivery Type:</span>
+            <select class="order-type-select js-delivery-select">
+              <option value="" disabled selected>Select Delivery Type</option>
+             <option value="Delivery">Delivery</option>
+             <option value="Collection">Collection</option>
+             <option value="Early-delivery">Early Delivery</option>
+             <option value="Late-delivery">Late Delivery</option>
+             <option value="Early-collection">Early Collection</option>
+             
+           
+            
+           </select>
+        </div>
+
+         <div class="order-type-container">
+            <span class="temp-property-text">Payment:</span>
+            <select class="order-type-select js-payment-select">
+              <option value="" disabled selected>Select Payment Type</option>
+             <option value="Payfast"  >Paid</option>
+             <option value="awaiting-payment" >Awaiting Payment</option>
+           
+            
+           </select>
+        </div>
+
+
+
+
+
+       <!--<div class="extra-notes-container">
+            <span class="temp-property-text">Note:</span>
+
+              <input class="note-input" type="text"
+              placeholder=" eg.Early delivery">
+            
+            
+        </div>--> 
+
+    </div>
+
+      <div class="add-button-container">
+       <button class ="add-order-button js-add-orders-button">Add Order &#43;</button>
+      </div>
+   
+    </div>
+
+
+        <span class="today-orders-heading"> Today's Orders</span>
+
+        
+    <table>
+        <thead>
+            <tr>
+                <th class="order-id">Order Id</th>
+                <th class="order-address">Address</th>
+                <th class="order-date">Date Added</th>
+                <th class="order-status"> Order Type</th>
+                 <th class="order-status"> Payment Status</th>
+            </tr>
+        </thead>
+        <tbody class="js-orders-container">
+
+            
+ 
+
+        </tbody>
+    </table>
+
+
+   <!--    <div class=" added-orders-container">
+            <div class="added-order-container">
+                <span>60656</span>
+                <span>Delivery</span>
+                <span>Added &#10004;</span>
+                <span>2026-02-07 23:30 </span>
+            </div>
+            <div class="added-order-container">
+              <span>60658</span>
+              <span>Bank Tran</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:32 </span>
+            </div>
+             <div class="added-order-container">
+              <span>60661</span>
+              <span>Collection</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:34 </span>
+            </div>
+
+
+             <div class="added-order-container">
+                <span>60662</span>
+                <span>Delivery</span>
+                <span>Added &#10004;</span>
+                <span>2026-02-07 23:35 </span>
+            </div>
+            <div class="added-order-container">
+              <span>60664</span>
+              <span>Bank Tran</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:36 </span>
+            </div>
+             <div class="added-order-container">
+              <span>60665</span>
+              <span>Collection</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:37 </span>
+            </div>
+
+
+             <div class="added-order-container">
+                <span>60666</span>
+                <span>Delivery</span>
+                <span>Added &#10004;</span>
+                <span>2026-02-07 23:38 </span>
+            </div>
+            <div class="added-order-container">
+              <span>60667</span>
+              <span>Bank Tran</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:39 </span>
+            </div>
+             <div class="added-order-container">
+              <span>60669</span>
+              <span>Collection</span>
+              <span>Added &#10004;</span>
+              <span>2026-02-07 23:45 </span>
+            </div>
+
+        </div>
+        --> 
+
+<div class="open-dashboard-button-container">
+  <a href="Dashboard.html" class="open-dashboard-button">
+    Open Dashboard 📈
+  </a>
+</div>
+
+<footer class="site-footer">
+    © 2026 Mark D-137 • Internal Use Only
+</footer>
+
+<script src=" https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+<script src="scripts/data/index.js" type="module"></script>
+
+</body>
+</html>
