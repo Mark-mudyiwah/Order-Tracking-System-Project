@@ -246,16 +246,19 @@ button {
 }
 
 .awaiting-payment {
-    color: #f5a30b;  
-    
+    color: #f59e0b;   /* Amber */
 }
 
 .processing {
-    color: #3b82f6;  
+    color: #3b82f6;   /* Blue */
 }
 
 .completed {
- color: #16a34a;  
+    color: #10b981;   /* Emerald */
+}
+
+.dispatched {
+    color: #6366f1;   /* Indigo */
 }
 
 .status {
@@ -264,6 +267,14 @@ button {
     font-size: 12px;
     font-weight: 600;
     
+}
+
+.view-icon,
+.delivery-icon{
+    width: 30px;
+    cursor: pointer;
+    margin-left: 8px;
+ 
 }
 
 

@@ -1,4 +1,4 @@
-import { orders } from "../utils/local.js";
+import { orders,saveToStorage} from "../utils/local.js";
 
 console.log(orders);
 
@@ -37,7 +37,7 @@ function updateTotals(targetOrders) {
     ).length;
 
     const dispatched = targetOrders.filter(order =>
-        order.dispatchStatus === true
+        order.status === 'Dispatched'
     ).length;
 
     const incomplete = targetOrders.filter(order =>
@@ -72,6 +72,8 @@ function renderOrdersHTML(targetOrders) {
             statusClass = 'status awaiting-payment';
         } else if (order.status === 'Processing') {
             statusClass = 'status processing'
+        }else if (order.status === 'Dispatched') {
+            statusClass = 'status dispatched'
         }
 
 
@@ -85,8 +87,9 @@ function renderOrdersHTML(targetOrders) {
                 </td>
                 <td>${order.deliveryType}</td>
                 <td>
-                    <button>👁</button>
-                    <button>🚚</button>
+                    <img class= "view-icon" src= "./icons/view-icon.png">
+                    ${statusText === 'Completed'?` <img src="./icons/delivery-icon.png" class = " delivery-icon js-dispatch-button"data-order-id="${order.id}" >`:''}
+                   
                 </td>
             </tr>
         `;
@@ -173,3 +176,30 @@ if (resetFilterButton) {
 //initial load
 renderOrdersHTML(orders);
 updateTotals(orders);
+
+
+const tableElement = document.querySelector('.js-orders-data-container')
+
+if(tableElement){
+     tableElement.addEventListener('click',(event)=>{
+    const button = event.target.closest('.js-dispatch-button')
+ if(button){
+
+    const orderId = Number(button.dataset.orderId)
+   
+
+     orders.forEach((order)=>{
+        
+        if(order.id === orderId){
+         order.status = 'Dispatched'
+
+         saveToStorage()
+         renderOrdersHTML(orders)
+         updateTotals(orders)
+        }
+        
+     })
+ }
+
+     })
+}
