@@ -2,7 +2,7 @@ import { orders } from "../utils/local.js";
 
 console.log(orders);
 
- //DOM elements
+//DOM elements
 
 const dateFilterElement = document.querySelector('.js-date-input');
 const statusFilterElement = document.querySelector('.js-filter-select');
@@ -16,16 +16,16 @@ const unPaidOrdersElement = document.querySelector('.js-unpaid-orders');
 const collectonOrdersElement = document.querySelector('.js-collection-orders');
 const dispatchedOrdersElement = document.querySelector('.js-dispatched-orders');
 const inCompleteOrdersElement = document.querySelector('.js-incomplete-orders');
- 
-  // UPDATE TOTALS FUNCTION
- 
+
+// UPDATE TOTALS FUNCTION
+
 
 function updateTotals(targetOrders) {
 
     const totalOrders = targetOrders.length;
 
     const checkedOrders = targetOrders.filter(order =>
-        order.checkedStatus === 'checked'
+        order.status === 'checked'
     ).length;
 
     const unPaidOrders = targetOrders.filter(order =>
@@ -62,13 +62,26 @@ function renderOrdersHTML(targetOrders) {
 
     targetOrders.forEach((order) => {
 
+        let statusClass = 'status pending';
+        let statusText = order.status;
+
+        if (order.status === 'checked') {
+            statusClass = 'status completed';
+            statusText = 'Completed';
+        } else if (order.status === 'Awaiting P.O.P') {
+            statusClass = 'status awaiting-payment';
+        } else if (order.status === 'Processing') {
+            statusClass = 'status processing'
+        }
+
+
         html += `
             <tr>
                 <td><b>${order.id}</b></td>
                 <td>${order.address}</td>
                 <td>${order.dateAdded}</td>
-                <td class="${order.checkedStatus === 'checked' ? 'checked' : 'pending'}">
-                    ${order.checkedStatus === 'checked' ? 'Checked' : 'Processing'}
+                <td class="${statusClass}">
+                 ${statusText}
                 </td>
                 <td>${order.deliveryType}</td>
                 <td>
@@ -81,7 +94,7 @@ function renderOrdersHTML(targetOrders) {
 
     document.querySelector('.js-orders-data-container').innerHTML = html;
 }
- 
+
 //apply filter
 
 if (applyFilterButton) {
@@ -123,7 +136,7 @@ if (applyFilterButton) {
             );
         }
 
-          if (status === 'awaiting-payment') {
+        if (status === 'awaiting-payment') {
             filteredOrders = filteredOrders.filter(order =>
                 order.paymentType === 'awaiting-payment'
             );
@@ -142,7 +155,7 @@ if (applyFilterButton) {
     });
 }
 
- 
+
 
 if (resetFilterButton) {
 
@@ -157,6 +170,6 @@ if (resetFilterButton) {
     });
 }
 
- //initial load
+//initial load
 renderOrdersHTML(orders);
 updateTotals(orders);

@@ -10,8 +10,7 @@ function updateDashboardTotals() {
   const totalOrders = orders.length;
 
   const paidOrders = orders.filter(order =>
-    order.paymentType === 'Payfast' &&
-    order.checkedStatus === 'not-checked'
+    order.status === 'Processing'
   );
 
   const pickUpOrders = orders.filter(order =>
@@ -23,7 +22,7 @@ function updateDashboardTotals() {
   );
 
   const checkedOrders = orders.filter(order =>
-    order.checkedStatus ==='checked'
+    order.status ==='checked'
   );
 
   function updateEachQuantity(selector, quantity) {
@@ -130,7 +129,7 @@ tableElement.addEventListener('click', (event) => {
 
     if (selectedValue === "Checked") {
 
-      order.checkedStatus = 'checked';
+      order.status = 'checked';
       saveToStorage();
 
       refreshUI();
@@ -198,7 +197,7 @@ if (stage === "price") {
   order.missingItemPrice = price;
   order.partial = true;
   console.log(order)
-  order.checkedStatus = 'checked'
+  order.status = 'checked'
 
   saveToStorage();
   refreshUI();

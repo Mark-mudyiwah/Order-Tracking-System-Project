@@ -69,25 +69,34 @@ function renderRoutes(routeTitle, routeName) {
     let checkedRouteOrders = 0
     let ordersHTML = ''
     routeName.forEach((order) => {
- if(order.checkedStatus === 'checked'){
+ if(order.status === 'checked'){
     checkedRouteOrders++
     console.log(order)
       
   
  }
+ let statusClass = 'status pending';
+let statusText = order.status;
+
+if (order.status === 'checked') {
+  statusClass = 'status completed';
+  statusText = 'Completed';
+} else if (order.status === 'Awaiting P.O.P') {
+  statusClass = 'status awaiting-payment';
+}else if(order.status ==='Processing'){
+    statusClass = 'status processing'
+}
  
     
      ordersHTML +=
             `
-        <tr>
-         <td>${order.id}</td>
-         <td>${order.address}</td>
-        <td>${order.checkedStatus === 'checked'
-            ?
-            '<span class="status completed">Completed</span>'
-            :
-            '<span class="status pending">Pending</span>'}</td>
-        </tr>
+<tr>
+  <td>${order.id}</td>
+  <td>${order.address}</td>
+  <td>
+    <span class="${statusClass}">${statusText}</span>
+  </td>
+</tr>
 
         `
     })

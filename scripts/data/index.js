@@ -65,7 +65,9 @@ function validateOrder(id, address, paymentType, deliveryType) {
 }
 
  
-function addOrder(id, address, paymentType, deliveryType) {
+function addOrder(id, address, paymentType, deliveryType,status) {
+
+  
 
     const today = dayjs().format('DD-MMM-YYYY HH:mm');
 
@@ -73,10 +75,10 @@ function addOrder(id, address, paymentType, deliveryType) {
         id: Number(id),
         address: address.trim(),
         deliveryType,
-        paymentType,
+        paymentType:paymentType,
         dateAdded: today,
-        checkedStatus: 'not-checked',
-        dispatchStatus: false,
+        status,
+        
         partial: false,
 
     });
@@ -126,9 +128,10 @@ if (addButton) {
         const address = addressInputElement.value;
         const deliveryType = deliveryElement.value;
         const paymentType = paymentElement.value;
+        const status = paymentElement.value ==='Payfast'? 'Processing':'Awaiting P.O.P'
 
         if (validateOrder(id, address, paymentType, deliveryType)) {
-            addOrder(id, address, paymentType, deliveryType);
+            addOrder(id, address, paymentType, deliveryType,status);
         }
 
     });

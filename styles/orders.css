@@ -245,6 +245,29 @@ button {
     color: white;
 }
 
+.awaiting-payment {
+    color: #f5a30b;  
+    
+}
+
+.processing {
+    color: #3b82f6;  
+}
+
+.completed {
+ color: #16a34a;  
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+
+
+
 .back-to-dashboard{
     display: flex;
     justify-content: center;

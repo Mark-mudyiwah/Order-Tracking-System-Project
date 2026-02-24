@@ -95,6 +95,19 @@
 }
 
 /* Status Badges */
+.awaiting-payment {
+    background-color: #f5a30b; /* amber */
+    
+}
+
+.processing {
+    background-color: #3b82f6; /* blue */
+}
+
+.completed {
+    background-color: #16a34a; /* green */
+}
+
 .status {
     padding: 4px 10px;
     border-radius: 20px;
@@ -104,17 +117,7 @@
 }
 
 /* Blue-based status variations */
-.status.pending {
-    background-color: #f59e0b; /* amber */
-}
 
-.status.in-progress {
-    background-color: #3b82f6; /* blue */
-}
-
-.status.completed {
-    background-color: #16a34a; /* green */
-}
 
 
 .view-all-button{
