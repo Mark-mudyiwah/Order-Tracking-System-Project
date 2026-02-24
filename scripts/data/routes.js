@@ -1,6 +1,13 @@
-import { orders } from "../utils/local.js";
+import { routeOrders } from "../utils/local.js";
 
-console.log(orders)
+//console.log(routeOrders)
+
+
+
+
+
+
+/*
 
 const southernRoute = orders.filter(order =>
     order.address === 'Muizenberg' ||
@@ -61,94 +68,150 @@ const westCoastRoute = orders.filter(order =>
 
 
 
+ */
+ 
+ 
+ 
+
+ 
+
+ 
+  // DELIVERY ZONES
+ 
+
+const southernSuburbs = [
+  "Athlone","Claremont","Constantia","Crawford","Kenilworth",
+  "Kenwyn","Kirstenhof","Lansdowne","Lotus River","Marina da Gama",
+  "Meadowridge","Mowbray","Newlands","Observatory","Ottery","retreat",
+  "Penlyn","Pinelands","Plumstead","Rondebosch","Rondebosch East",
+  "Rylands","Southfield","Surrey Estate","Tokai","Wynberg","Zeekoevlei"
+];
+
+const northernSuburbs = [
+  "Bellville","Belhar","Blue Downs","Bonteheuwel","Bothasig",
+  "Brackenfell","","Durbanville","Edgemead","Eersterivier",
+  "Elsies River","Goodwood","Kraaifontein","Kuils River","Loevenstein",
+  "Monte Vista","Northpine","Oakdene","Oostersee","Panorama",
+  "Parow","Parow North","Parow Valley","Parow West","Plattekloof",
+  "Ruyterwacht","Thornton","Tijgerhof","Brooklyn","Vasco Estate","Welgelegen"
+];
+
+const westCoastSuburbs = [
+  "Big Bay","Blouberg","Burgundy Estate","Century City",
+  "Flamingo Vlei","Milnerton Rural","Paarden Eiland",
+  "Parklands","Sandrift","Summergreens",
+  "Sunningdale","Tableview"
+];
+
+const capeTownSuburbs = [
+  "Cape Town CBD","Bo-Kaap","Green Point",
+  "Sea Point","Fresnaye","Vredehoek",
+  "Walmer Estate","Woodstock"
+];
+
+  
+   //STORE ZONES IN ARRAYS
+ 
+
+const zoneNames = ["Southern", "Northern", "West Coast", "Cape Town"];
+const zoneSuburbs = [
+  southernSuburbs,
+  northernSuburbs,
+  westCoastSuburbs,
+  capeTownSuburbs
+];
+
+ 
+   //GENERATE ROUTES USING FOR LOOP
+ 
+
+for (let i = 0; i < zoneNames.length; i++) {
+
+  const currentZoneName = zoneNames[i];
+  const currentZoneSuburbs = zoneSuburbs[i];
+
+  const route = routeOrders.filter(order =>
+    currentZoneSuburbs.includes(order.address)
+  );
+
+  renderRoutes(currentZoneName, route);
+}
+
+  // COLLECTION ROUTE
+
+
+const collectionRoute = routeOrders.filter(order =>
+  order.deliveryType === "Collection"
+);
+
+renderRoutes("Collections", collectionRoute);
+
  
 
 function renderRoutes(routeTitle, routeName) {
 
-    const totalRouteOrders = routeName.length 
-    let checkedRouteOrders = 0
-    let ordersHTML = ''
-    routeName.forEach((order) => {
- if(order.status === 'checked'){
-    checkedRouteOrders++
-    console.log(order)
-      
-  
- }
- let statusClass = 'status pending';
-let statusText = order.status;
+  const totalRouteOrders = routeName.length;
+  let checkedRouteOrders = 0;
+  let ordersHTML = "";
 
-if (order.status === 'checked') {
-  statusClass = 'status completed';
-  statusText = 'Completed';
-} else if (order.status === 'Awaiting P.O.P') {
-  statusClass = 'status awaiting-payment';
-}else if(order.status ==='Processing'){
-    statusClass = 'status processing'
-}
- 
-    
-     ordersHTML +=
-            `
-<tr>
-  <td>${order.id}</td>
-  <td>${order.address}</td>
-  <td>
-    <span class="${statusClass}">${statusText}</span>
-  </td>
-</tr>
+  routeName.forEach((order) => {
 
-        `
-    })
-    
-    const progressPercent = totalRouteOrders
-    ? ((checkedRouteOrders / totalRouteOrders) * 100).toFixed(0)
-    : 0; // fallback to 0 if no orders
+    if (order.status === "checked") {
+      checkedRouteOrders++;
+    }
 
-    let html= `
-   <div class="route-card">
-            <h2>${routeTitle}</h2>
+    let statusClass = "status pending";
+    let statusText = order.status;
 
-            <!-- Progress Bar -->
-            <div class="progress-container">
-                <span>Progress: <b>${progressPercent}%</b></span>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: ${progressPercent}%;"></div>
-                </div>
-            </div>
+    if (order.status === "checked") {
+      statusClass = "status completed";
+      statusText = "Completed";
+    } else if (order.status === "Awaiting P.O.P") {
+      statusClass = "status awaiting-payment";
+    } else if (order.status === "Processing") {
+      statusClass = "status processing";
+    }else if (order.status === "Dispatched") {
+      statusClass = "status dispatched";
+    }
 
-            <!-- Orders Table -->
-            <table class="orders-table">
-           <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                     ${ordersHTML}
-                </tbody>
-            </table>
-           
-        </div>
-
-         
+    ordersHTML += `
+      <tr>
+        <td>${order.id}</td>
+        <td>${order.address}</td>
+        <td>
+          <span class="${statusClass}">${statusText}</span>
+        </td>
+      </tr>
     `;
+  });
 
-    document.querySelector('.js-routes-container').innerHTML += html;
+  const progressPercent = totalRouteOrders
+    ? ((checkedRouteOrders / totalRouteOrders) * 100).toFixed(0)
+    : 0;
 
-    console.log(totalRouteOrders, checkedRouteOrders)
+  let html = `
+    <div class="route-card">
+      <h2>${routeTitle}</h2>
+      <div class="progress-container">
+        <span>Progress: <b>${progressPercent}%</b></span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${progressPercent}%;"></div>
+        </div>
+      </div>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Address</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${ordersHTML}
+        </tbody>
+      </table>
+    </div>
+  `;
 
+  document.querySelector(".js-routes-container").innerHTML += html;
 }
-
-
-console.log(southernRoute)
-
-renderRoutes('Southern', southernRoute)
-renderRoutes('Northern',northenRoute)
-renderRoutes('West Coast', westCoastRoute)
-renderRoutes('Capetown', capeTownRoute)
-renderRoutes('Collections', collectionRoute)
-
-

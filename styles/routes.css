@@ -108,6 +108,10 @@
     background-color: #16a34a; /* green */
 }
 
+.dispatched {
+    background-color: #6366f1;   /* Indigo */
+}
+
 .status {
     padding: 4px 10px;
     border-radius: 20px;

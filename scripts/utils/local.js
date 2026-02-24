@@ -14,21 +14,10 @@ export function saveToStorage(){
 export let orders = loadFromStorage() || []
 
 
-const paidOrders = orders.filter(order=>
-  order.paymentType ==='Payfast'
+ export let routeOrders = orders.filter(order=>
+  order.status !=='Dispatched'
 )
 
-
-const awaitingPaymentOrders = orders.filter(order =>
-  order.paymentType !== 'Payfast'
-)
-
-
-  const collectionOrders = paidOrders.filter(order =>
-  order.deliveryType ==='Collection'
-)
-
-const checkedOrders = paidOrders.filter(order =>
-  order.checkedStatus === true
-)
+ 
+ 
  
