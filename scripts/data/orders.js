@@ -88,8 +88,14 @@ function renderOrdersHTML(targetOrders) {
                 <td>${order.deliveryType}</td>
 
                 <td class = " action-td js-action-td-${order.id}">
+
                     <img class= "view-icon" src= "./icons/view-icon.png">
-                    ${statusText === 'Completed' ? ` <img src="./icons/delivery-icon.png" class = " delivery-icon js-dispatch-button"data-order-id="${order.id}" >` : ''}
+
+                    ${statusText === 'Completed' ? 
+                    `<img src="./icons/delivery-icon.png"
+                        class="delivery-icon js-open-dispatch"
+                        data-order-id="${order.id}">` : 
+                     ''}
                    
                  
 
@@ -108,7 +114,10 @@ function renderOrdersHTML(targetOrders) {
                     <option value="Other">Other</option>
                     </select>
 
-                    <button class = "dispatch-button js-dispatch-button">Dispatch</button>
+                  <button class="dispatch-button js-confirm-dispatch"
+                   data-order-id="${order.id}">
+    Dispatch
+</button>
                 </td>
             </tr>
         `;
@@ -199,6 +208,69 @@ renderOrdersHTML(orders);
 updateTotals(orders);
 
 
+
+const tableElement = document.querySelector('.js-orders-data-container');
+
+if (tableElement) {
+
+  tableElement.addEventListener('click', (event) => {
+
+    //open driver select
+
+    const openButton = event.target.closest('.js-open-dispatch');
+
+    if (openButton) {
+      const orderId = Number(openButton.dataset.orderId);
+
+      const actionTd = tableElement.querySelector(`.js-action-td-${orderId}`);
+      const selectTd = tableElement.querySelector(`.js-select-td-${orderId}`);
+
+      if (actionTd && selectTd) {
+        actionTd.classList.add('hide');
+        selectTd.classList.add('show');
+      }
+
+      return;
+    }
+
+ //Confirm dispatch
+ 
+
+    const confirmButton = event.target.closest('.js-confirm-dispatch');
+
+    if (confirmButton) {
+
+      const orderId = Number(confirmButton.dataset.orderId);
+
+      const selectElement = tableElement.querySelector(
+        `.js-select-td-${orderId} .js-driver-select`
+      );
+
+      const selectedDriver = selectElement.value;
+
+      if (!selectedDriver || selectedDriver === "All") {
+        alert("Please select a driver first.");
+        return;
+      }
+
+      // Update data
+      const order = orders.find(order => order.id === orderId);
+
+      if (order) {
+        order.driver = selectedDriver;
+        order.status = "Dispatched";
+      }
+
+      //  Save + Re-render
+      saveToStorage();
+      renderOrdersHTML(orders);
+      updateTotals(orders);
+    }
+
+  });
+
+}
+/*
 const tableElement = document.querySelector('.js-orders-data-container')
 
 if (tableElement) {
@@ -234,3 +306,5 @@ if (tableElement) {
 
     })
 }
+
+*/
