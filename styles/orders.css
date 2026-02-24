@@ -231,6 +231,13 @@ button {
     font-size: 13px;
 }
 
+.driver-select{
+    padding: 4px 6px;
+    color: rgb(0, 60, 255);
+    outline:none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
 .view-btn {
     background: #e7ebf0;
 }
@@ -279,6 +286,12 @@ button {
 
 
 
+.select-td{
+  display: none;
+}
+
+
+
 .back-to-dashboard{
     display: flex;
     justify-content: center;
@@ -286,6 +299,15 @@ button {
     text-decoration: none;
     color: #1e88e5;
     font-weight: 700;
+}
+
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: inline-block;
 }
 
 

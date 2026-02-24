@@ -84,23 +84,23 @@ const southernSuburbs = [
   "Kenwyn","Kirstenhof","Lansdowne","Lotus River","Marina da Gama",
   "Meadowridge","Mowbray","Newlands","Observatory","Ottery","retreat",
   "Penlyn","Pinelands","Plumstead","Rondebosch","Rondebosch East",
-  "Rylands","Southfield","Surrey Estate","Tokai","Wynberg","Zeekoevlei"
+  "Rylands","Southfield","Surrey Estate","Tokai","Wynberg","Zeekoevlei","Zeekovlei","Hout Bay"
 ];
 
 const northernSuburbs = [
-  "Bellville","Belhar","Blue Downs","Bonteheuwel","Bothasig",
+  "Bluedowns","Bellville","Belhar","Blue Downs","Bonteheuwel","Bothasig",
   "Brackenfell","","Durbanville","Edgemead","Eersterivier",
   "Elsies River","Goodwood","Kraaifontein","Kuils River","Loevenstein",
-  "Monte Vista","Northpine","Oakdene","Oostersee","Panorama",
-  "Parow","Parow North","Parow Valley","Parow West","Plattekloof",
+  "Monte Vista","Northpine","Oakdene","Oostersee","Panorama","Delft","Heideveld",
+  "Parow","Parow North","Parow Valley","Parow West","Plattekloof","Maitland",
   "Ruyterwacht","Thornton","Tijgerhof","Brooklyn","Vasco Estate","Welgelegen"
 ];
 
 const westCoastSuburbs = [
-  "Big Bay","Blouberg","Burgundy Estate","Century City",
+  "Big Bay","Blouberg","Burgundy Estate","Century City","Eagle Park",
   "Flamingo Vlei","Milnerton Rural","Paarden Eiland",
-  "Parklands","Sandrift","Summergreens",
-  "Sunningdale","Tableview"
+  "Parklands","Sandrift","Summergreens","Milnerton",
+  "Sunningdale","Tableview","Montague","Montague Gardens"
 ];
 
 const capeTownSuburbs = [

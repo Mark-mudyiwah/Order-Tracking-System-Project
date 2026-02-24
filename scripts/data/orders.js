@@ -1,4 +1,4 @@
-import { orders,saveToStorage} from "../utils/local.js";
+import { orders, saveToStorage } from "../utils/local.js";
 
 console.log(orders);
 
@@ -72,7 +72,7 @@ function renderOrdersHTML(targetOrders) {
             statusClass = 'status awaiting-payment';
         } else if (order.status === 'Processing') {
             statusClass = 'status processing'
-        }else if (order.status === 'Dispatched') {
+        } else if (order.status === 'Dispatched') {
             statusClass = 'status dispatched'
         }
 
@@ -86,10 +86,29 @@ function renderOrdersHTML(targetOrders) {
                  ${statusText}
                 </td>
                 <td>${order.deliveryType}</td>
-                <td>
+
+                <td class = " action-td js-action-td-${order.id}">
                     <img class= "view-icon" src= "./icons/view-icon.png">
-                    ${statusText === 'Completed'?` <img src="./icons/delivery-icon.png" class = " delivery-icon js-dispatch-button"data-order-id="${order.id}" >`:''}
+                    ${statusText === 'Completed' ? ` <img src="./icons/delivery-icon.png" class = " delivery-icon js-dispatch-button"data-order-id="${order.id}" >` : ''}
                    
+                 
+
+                     
+                </td>
+                <td class = "select-td js-select-td-${order.id}">
+                    <select   class="js-driver-select driver-select">
+      
+                    <option value="All" selected disabled>Select Driver</option> 
+                    <option value="Allie">Allie</option>
+                    <option value="Darryl">Darryl</option>
+                    <option value="Ashwaad">Ashwaad</option>
+                    <option value="Muawiya">Muawiya</option>
+                    <option value="Antony">Antony</option>
+                    <option value="Mujaid">Mujaid</option>
+                    <option value="Other">Other</option>
+                    </select>
+
+                    <button class = "dispatch-button js-dispatch-button">Dispatch</button>
                 </td>
             </tr>
         `;
@@ -113,6 +132,8 @@ if (applyFilterButton) {
         const status = statusFilterElement.value;
         const orderId = idFilterElement.value.trim();
 
+        console.log(status)
+
         //  Filter by date
         if (dateString) {
             filteredOrders = filteredOrders.filter(order =>
@@ -123,7 +144,7 @@ if (applyFilterButton) {
         //  Filter by status
         if (status === 'completed') {
             filteredOrders = filteredOrders.filter(order =>
-                order.checkedStatus === 'checked'
+                order.status === 'checked'
             );
         }
 
@@ -135,7 +156,7 @@ if (applyFilterButton) {
 
         if (status === 'dispatched') {
             filteredOrders = filteredOrders.filter(order =>
-                order.dispatchStatus === true
+                order.status === 'Dispatched'
             );
         }
 
@@ -180,26 +201,36 @@ updateTotals(orders);
 
 const tableElement = document.querySelector('.js-orders-data-container')
 
-if(tableElement){
-     tableElement.addEventListener('click',(event)=>{
-    const button = event.target.closest('.js-dispatch-button')
- if(button){
+if (tableElement) {
+    tableElement.addEventListener('click', (event) => {
+       
+        const button = event.target.closest('.js-dispatch-button')
+        if (button) {
 
-    const orderId = Number(button.dataset.orderId)
-   
+            const orderId = Number(button.dataset.orderId)
 
-     orders.forEach((order)=>{
-        
-        if(order.id === orderId){
-         order.status = 'Dispatched'
+             const actionTdataElem = document.querySelector(`.js-action-td-${orderId}`)
+             const  selectTdataElem = document.querySelector(`.js-select-td-${orderId}`)
+              
 
-         saveToStorage()
-         renderOrdersHTML(orders)
-         updateTotals(orders)
+            orders.forEach((order) => {
+
+                if (order.id === orderId) {
+
+                 actionTdataElem.classList.add('hide')
+                  
+                  selectTdataElem.classList.add('show')
+                  console.log(button)
+
+                    // order.status = 'Dispatched'
+
+                  //  saveToStorage()
+                  // renderOrdersHTML(orders)
+                   // updateTotals(orders)
+                }
+
+            })
         }
-        
-     })
- }
 
-     })
+    })
 }
