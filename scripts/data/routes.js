@@ -77,337 +77,81 @@ const westCoastRoute = orders.filter(order =>
 
  
   // DELIVERY ZONES
- 
-
 const southernSuburbs = [
-
-  // Observatory / Mowbray Side
-  "Observatory",
-  "Mowbray",
-  "Rosebank",
-  "Little Mowbray",
-  "Rondebosch",
-  "Rondebosch East",
-  "Newlands",
-  "Bishopscourt",
-
-  // Claremont / Kenilworth
-  "Claremont",
-  "Claremont Upper",
-  "Kenilworth",
-  "Kenilworth Upper",
-  "Harfield Village",
-  "Wetton",
-  "Dreyer Street Area",
-   "lansdowne",
-   "Belgravia",
-   "Athlone",
-   "Rylands",
-   "Crawford",
-   "Penlyn",
-   "Hazendal",
-
-  // Wynberg / Plumstead
-  "Wynberg",
-  "Wynberg Upper",
-  "Plumstead",
-  "Diep River",
-  "Southfield",
-  "Heathfield",
-
-  // Constantia Valley
-  "Constantia",
-  "Constantia Village",
-  "Kreupelbosch",
-  "Meadowridge",
-  "Bergvliet",
-  "Lakeside",
-  "Tokai",
-  "Kirstenhof",
-
-  // Steenberg / Retreat Area
-  "Steenberg",
-  "Retreat",
-  "Retreat Industrial",
-  "Lavender Hill",
-  "Seawinds",
-  "Grassy Park",
-  "Lotus River",
-  "Pelican Park",
-  "Zeekoevlei",
-
-  // Muizenberg / False Bay
-  "Muizenberg",
-  "Marina da Gama",
-  "Capricorn",
-  "St James",
-  "Kalk Bay",
-  "Fish Hoek",
-  "Sunny Cove",
-  "Glencairn",
-  "Simons Town",
-  "Welcome Glen",
-
-  // Noordhoek / Kommetjie
-  "Noordhoek",
-  "Sun Valley",
-  "Capri",
-  "Kommetjie",
-  "Ocean View",
-  "Masiphumelele",
-  "Scarborough",
-  "Red Hill"
+  "Observatory", "Mowbray", "Rosebank", "Little Mowbray", "Rondebosch", "Rondebosch East", 
+  "Newlands", "Bishopscourt", "Claremont", "Claremont Upper", "Kenilworth", "Kenilworth Upper", 
+  "Harfield Village", "Wetton", "Lansdowne", "Belgravia", "Athlone", "Rylands", "Crawford", 
+  "Penlyn", "Hazendal", "Wynberg", "Wynberg Upper", "Plumstead", "Diep River", "Southfield", 
+  "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
+  "Lakeside", "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
+  "Grassy Park", "Lotus River", "Pelican Park", "Zeekoevlei", "Muizenberg", "Marina da Gama","Fisherman's Village",
+  "Capricorn", "St James", "Kalk Bay", "Fish Hoek", "Sunny Cove", "Glencairn", "Simons Town", 
+  "Welcome Glen", "Noordhoek", "Sun Valley", "Capri", "Kommetjie", "Ocean View", "Masiphumelele", 
+  "Scarborough", "Red Hill","Belthorn Estate"
 ];
+
 const northernSuburbs = [
-
-  // Bellville Core
-  "Bellville",
-  "Bellville South",
-  "Boston",
-  "Oakdale",
-  "Parow Valley",
-  "Hoheizen",
-  "De La Haye",
-  "Stellenridge",
-  "Stellenryk",
-  "Chrismar",
-  "Belhar",
-  "University Estate Bellville",
-  "Bellville Central",
-
-  // Parow Area
-  "Parow",
-  "Parow North",
-  "Parow East",
-  "Glenlily",
-  "Oostersee",
-  "Ravensmead",
-  "Avondale Parow",
-  "De Tijger",
-  "Fairfield Estate",
-
-  // Goodwood Area
-  "Goodwood",
-  "Goodwood Estate",
-  "Townsend Estate",
-  "Ruyterwacht",
-  "Vasco Estate",
-  "Glenwood",
-  "Elsies River",
-  "Connaught Estate",
-  "Heideveld",
-  "Bonteheuwel",
-
-  // Plattekloof / Panorama Hills
-  "Plattekloof",
-  "Plattekloof Glen",
-  "Panorama",
-  "Welgelegen",
-  "Baronetcy Estate",
-  "Kleinbosch",
-  "Welgemoed",
-  "Van Riebeeckshof",
-  "De Bron",
-  "Door De Kraal",
-  "Ridgeworth",
-  "Tygerdal",
-  "Monte Vista",
-  "Bothasig",
-  "Edgemead",
-
-  // Durbanville Area
-  "Durbanville",
-  "Durbanville Hills",
-  "Vierlanden",
-  "Sonstraal",
-  "Sonstraal Heights",
-  "Uitzicht",
-  "Bonnie Brae",
-  "Eversdal",
-  "Kenridge",
-  "Vygeboom",
-  "Vygeboom Estate",
-  "Goedemoed",
-  "Amanda Glen",
-  "Aurora",
-  "Clara Anna Fontein",
-  "Langeberg Ridge",
-  "Graanendal",
-  "Pinehurst",
-
-  // Brackenfell Area
-  "Brackenfell",
-  "Protea Heights",
-  "Vredekloof",
-  "Vredekloof East",
-  "Vredekloof Heights",
-  "Northpine",
-  "Rouxville",
-  "Ferndale",
-  "Sonkring",
-  "Kleinbron Estate",
-  "Burgundy Estate ",
-
-  // Kraaifontein Area
-  "Kraaifontein",
-  "Windsor Park",
-  "Windsor Park Estate",
-  "Fountain Village",
-  "Peerless Park",
-  "Peerless Park East",
-  "Peerless Park North",
-  "Zoo Park",
-  "Langeberg Heights",
-  "Joostenbergvlakte",
-
-  // Airport / Industrial
-  "Airport Industria",
-  "Airport City",
-  "Blackheath",
-  "Blackheath Industrial",
-  "Saxenburg Park",
-  "Epping",
-  "Thornton",
-  "Ndabeni",
-  "Maitland",
-
-  // Blue Downs / Eastern Edge
-  "Blue Downs",
-  "Mfuleni",
-  "Delft",
-  "Rocklands",
-  "Mitchell's plain",
-  "Portlands",
-  "Delft South",
-  "Eerste River",
-  "Kleinvlei",
-  "The Hague",
-  "Electric City"
+  "Bellville", "Bellville South","Pinelands" ,"Boston", "Oakdale", "Parow Valley", "Hoheizen", "De La Haye", 
+  "Stellenridge", "Stellenryk", "Chrismar", "Belhar", "University Estate Bellville", "Bellville Central", 
+  "Parow", "Parow North", "Parow East", "Glenlily", "Oostersee", "Ravensmead", "Avondale Parow", 
+  "De Tijger", "Fairfield Estate", "Goodwood", "Goodwood Estate", "Townsend Estate", "Ruyterwacht", 
+  "Vasco Estate", "Glenwood", "Elsies River", "Connaught Estate", "Heideveld", "Bonteheuwel","Charlesville",
+  "Plattekloof", "Plattekloof Glen", "Panorama", "Welgelegen", "Baronetcy Estate", "Kleinbosch", 
+  "Welgemoed", "Van Riebeeckshof", "De Bron", "Door De Kraal", "Ridgeworth", "Tygerdal","Riverton",
+  "Monte Vista", "Bothasig", "Edgemead", "Durbanville", "Durbanville Hills", "Vierlanden", 
+  "Sonstraal", "Sonstraal Heights", "Uitzicht", "Bonnie Brae", "Eversdal", "Kenridge", "Vygeboom", 
+  "Goedemoed", "Amanda Glen", "Aurora", "Clara Anna Fontein", "Langeberg Ridge", "Graanendal", 
+  "Pinehurst", "Brackenfell", "Protea Heights", "Vredekloof", "Vredekloof East", "Northpine", 
+  "Rouxville", "Ferndale", "Sonkring", "Kleinbron Estate", "Burgundy Estate", "Kraaifontein", 
+  "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights", 
+  "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
+  "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft", "Mitchell's Plain","schaapkraal","Strandfontein",
+  "Eerste River", "Kleinvlei", "Electric City"
 ];
 
 const westCoastSuburbs = [
-  // Parklands / Rivergate Area
-  "Rivergate",
-  "Parklands",
-  "Parklands North",
-  "Table View",
-  "Flamingo Vlei",
-  "Sunningdale",
-  "West Beach",
-  "Bloubergstrand",
-  "Big Bay",
-  "Sandown",
-
-  // Milnerton / Century Area
-  "Century City",
-  "Milnerton",
-  "Milnerton Ridge",
-  "Sunset Beach",
-  "Sunset Links",
-  "Royal Ascot",
-  "Woodbridge Island",
-  "Sanddrift",
-  "Tijgerhof",
-  "Bothasig",
-  "Edgemead",
-  "Monte Vista",
-  "Summer Greens",
-
-  // Industrial
-  "Killarney Gardens",
-  "Racing Park",
-  "Montague Gardens",
-  "Paarden Eiland",
-  "Brooklyn",
-  
-
-  // Atlantis & Surroundings
-  "Atlantis",
-  "Robinvale",
-  "Wesfleur",
-  "Saxenburg Park",
-  "Beacon Hill",
-  "Protea Park",
-  "Sherwood",
-  "Avondale",
-  "Mamre",
-  "Pella",
-
-  // West Coast Stretch
-  "Melkbosstrand",
-  "Duynefontein",
-  "Van Riebeeckstrand",
-  "Groot Brakrivier",
-  "Philadelphia",
-  "Morningstar",
-  "Fisantkraal",
-  "Klipheuwel",
-  "Chatsworth",
-  "Malmesbury"
+  "Milnerton", "Milnerton Ridge", "Sunset Beach", "Sunset Links", "Royal Ascot", 
+  "Woodbridge Island", "Sanddrift", "Tijgerhof", "Century City","Century Boulevard", "Summer Greens", 
+  "Montague Gardens", "Marconi Beam", "Paarden Eiland", "Brooklyn", "Rugby", "Table View", 
+  "Flamingo Vlei", "Sunningdale", "West Beach", "Bloubergstrand","Blouberg", "Big Bay", "Sandown", 
+  "Parklands", "Parklands North", "Rivergate", "Killarney Gardens", "Racing Park", 
+  "Melkbosstrand", "Duynefontein", "Van Riebeeckstrand"
 ];
 
-const capeTownSuburbs= [
-
-  // CBD Core
-  "Capetown",
-  "CBD",
-  "City Bowl",
-  "Foreshore",
-  "Gardens",
-  "Oranjezicht",
-  "Vredehoek",
-  "Tamboerskloof",
-  "Higgovale",
-  "Devils Peak Estate",
-  "Zonnebloem",
-  "District Six",
-  "Bo-Kaap",
-  "De Waterkant",
-  "Lower Long Street Area",
-
-  // Waterfront Area
-  "Victoria & Alfred Waterfront",
-  "Green Point Stadium Precinct",
-  "Portswood",
-  "Granger Bay",
-
-  // Woodstock / Salt River Side
-  "Woodstock",
-  "Upper Woodstock",
-  "Salt River",
-  "Walmer Estate",
-  "University Estate",
-   
-
-  // Green Point / Sea Point Strip
-  "Green Point",
-  "Three Anchor Bay",
-  "Mouille Point",
-  "Sea Point",
-  "Fresnaye",
-  "Bantry Bay",
-
-  // Clifton / Camps Bay
-  "Clifton",
-  "Camps Bay",
-  "Bakoven",
-  "Oudekraal",
-
-  // Hout Bay Stretch
-  "Hout Bay",
-  "Imizamo Yethu",
-  "Llandudno"
+const farWestCoastSuburbs = [
+  "Philadelphia", "Morningstar", "Fisantkraal", "Klipheuwel", "Chatsworth", "Atlantis", 
+  "Robinvale", "Wesfleur", "Beacon Hill", "Protea Park", "Sherwood", "Avondale Atlantis", 
+  "Mamre", "Pella", "Malmesbury"
 ];
-  
+
+const capeTownSuburbs = [
+  "Capetown", "CBD", "City Bowl", "Foreshore", "Gardens", "Oranjezicht", "Vredehoek", 
+  "Tamboerskloof", "Higgovale", "Devils Peak Estate", "Zonnebloem", "District Six", 
+  "Bo-Kaap", "De Waterkant", "Victoria & Alfred Waterfront", "WaterFront","Granger Bay", "Woodstock", 
+  "Upper Woodstock", "Salt River", "Walmer Estate", "University Estate", "Green Point", 
+  "Three Anchor Bay", "Mouille Point", "Sea Point", "Fresnaye", "Bantry Bay", "Clifton", 
+  "Camps Bay", "Bakoven", "Oudekraal", "Hout Bay", "Imizamo Yethu", "Llandudno",
+];
+
+ 
+const stellenStrandSuburbs = [
+  "Stellenbosch Central", "Die Boord", "Mostertsdrift", "Idas Valley", "Cloetesville","Kuils River","Kraaifontein",
+  "Kayamandi", "Paradyskloof", "Brandwacht", "Welgevonden Estate", "Jamestown", 
+  "Kylemore", "Pniel", "Franschhoek",  "Somerset West", "Strand", "Gordon's Bay", "Firgrove", "Macassar", "Sir Lowry's Pass", 
+  "Spanish Farm", "Heldervue", "Greenways","Paarl"
+];
    //STORE ZONES IN ARRAYS
  
 
-const zoneNames = ["Southern", "Northern", "West Coast", "Cape Town"];
+const zoneNames = ["Southern", "Northern", "West Coast", "Cape Town","Far West Coast","Strand & Stellenbosch"];
 const zoneSuburbs = [
   southernSuburbs,
   northernSuburbs,
   westCoastSuburbs,
-  capeTownSuburbs
+  capeTownSuburbs,
+  farWestCoastSuburbs,
+  stellenStrandSuburbs,
+
 ];
 
  function normalizeLocation(value) {
@@ -430,7 +174,9 @@ for (let i = 0; i < zoneNames.length; i++) {
     currentZoneSet.has(normalizeLocation(order.address))
   );
 
-  renderRoutes(currentZoneName, route);
+ if (route.length > 0) {
+    renderRoutes(currentZoneName, route);
+  }
 }
 
   // COLLECTION ROUTE
