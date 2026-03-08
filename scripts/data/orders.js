@@ -90,7 +90,7 @@ function renderOrdersHTML(targetOrders) {
 
                 <td class = " action-td js-action-td-${order.id}">
 
-                    <img class= "view-icon" src= "./icons/view-icon.png">
+                    <img class= "view-icon js-view-order-icon" src= "./icons/view-icon.png" data-order-id="${order.id}">
 
                     ${statusText === 'Completed' ? 
                     `<img src="./icons/delivery-icon.png"
@@ -111,8 +111,7 @@ function renderOrdersHTML(targetOrders) {
                     <option value="Ashwaad">Ashwaad</option>
                     <option value="Muawiya">Muawiya</option>
                     <option value="Antony">Antony</option>
-                    <option value="Mujaid">Mujaid</option>
-                    <option value="Other">Other</option>
+                    <option value="Magdeen">Magdeen</option>
                     </select>
 
                   <button class="dispatch-button js-confirm-dispatch"
@@ -219,6 +218,14 @@ if (tableElement) {
     //open driver select
 
     const openButton = event.target.closest('.js-open-dispatch');
+
+    const viewbuton = event.target.closest('.js-view-order-icon')
+
+    if(viewbuton){
+       const orderId = viewbuton.dataset.orderId
+       console.log(orderId)
+       window.open (`order.html?orderId=${orderId}`)
+    }
 
     if (openButton) {
       const orderId = Number(openButton.dataset.orderId);

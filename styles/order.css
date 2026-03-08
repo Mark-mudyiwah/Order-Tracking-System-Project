@@ -1,7 +1,7 @@
 /* GENERAL */
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  roboto;
   background: #f4f6f9;
   margin:0;
   padding:20px;
@@ -18,24 +18,7 @@ h2{
 }
 
 /* HEADER */
-
-.header{
-  background:#1f2a38;
-  color:white;
-  padding:20px 25px;
-  border-radius:8px;
-  margin-bottom:30px;
-}
-
-.header-left .system-name{
-  font-size:24px;
-}
-
-.header-left .system-subtitle{
-  font-size:14px;
-  opacity:0.8;
-  margin-top:5px;
-}
+ 
 
 /* ORDER INFO */
 
@@ -62,12 +45,11 @@ h2{
 }
 
 .label{
-  font-weight:600;
+  
 }
 
 .value{
-  color: #1e88e5;
-  font-weight: 600;
+  
 }
 
 
@@ -96,8 +78,8 @@ h2{
   opacity:0.85;
 }
 
-.action-btn.cancel{
-  background:#e74c3c;
+.action-btn.uplift{
+  background:#0c84a8;
 }
 
 .action-btn.success{
@@ -147,4 +129,13 @@ gap: 30px;
 
 .step-value{
   color:#1a1818;
+}
+
+.back-to-dashboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #1e88e5;
+    font-weight: 700;
 }

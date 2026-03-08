@@ -62,7 +62,7 @@ const capeTownSuburbs = [
 
  
 const stellenStrandSuburbs = [
-  "Stellenbosch Central", "Die Boord", "Mostertsdrift", "Idas Valley", "Cloetesville","Kuils River","Kraaifontein",
+  "Stellenbosch", "Die Boord", "Mostertsdrift", "Idas Valley", "Cloetesville","Kuils River","Kraaifontein",
   "Kayamandi", "Paradyskloof", "Brandwacht", "Welgevonden Estate", "Jamestown", 
   "Kylemore", "Pniel", "Franschhoek",  "Somerset West", "Strand", "Gordon's Bay", "Firgrove", "Macassar", "Sir Lowry's Pass", 
   "Spanish Farm", "Heldervue", "Greenways","Paarl","Wellington"

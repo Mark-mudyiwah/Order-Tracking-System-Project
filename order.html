@@ -2,89 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Order Dashboard</title>
+<title>Order Info</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="./styles/order.css">
+<link rel="stylesheet" href="./styles/shared-styles/header.css">
+<link rel="stylesheet" href="./styles/shared-styles/nav.css">
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header class="header">
-  <div class="header-left">
-    <h1 class="system-name">Online Orders Control Panel</h1>
-    <p class="system-subtitle">Goodhope On The Go</p>
-  </div>
-</header>
+  <div class = "header">
+         <div class="system-name-text">
+          Online  Orders Control Panel
+        </div>
+        <div class="on-the-go-text">
+          Goodhope On The Go
+        </div>
+       
 
-<!-- ORDER INFO -->
-<section class="order-info">
-  <h2>Order Information</h2>
-
-  <div class="order-details">
-    <div class="detail-row">
-      <span class="label">Order ID:</span>
-      <span class="value">60067</span>
     </div>
+<div class="js-main"> 
 
-    <div class="detail-row">
-      <span class="label">Payment:</span>
-      <span class="value">Waiting for Pop</span>
-    </div>
+</div>
+<a href= "Dashboard.html"class="back-to-dashboard">
+    <span>Back To DashBoard</span></a>
 
-    <div class="detail-row">
-      <span class="label">Address:</span>
-      <span class="value">Claremont</span>
-    </div>
+<footer class="site-footer">
+    © 2026 Mark D-137 • Internal Use Only
+</footer>
 
-    <div class="detail-row">
-      <span class="label">Missing Item:</span>
-      <span class="value">Chana Dhal</span>
-    </div>
+<script src="./scripts/data/order-info.js" type="module"></script>
 
-    <div class="detail-row">
-      <span class="label">Price:</span>
-      <span class="value">R29.99</span>
-    </div>
 
-    <div class="action-row">
-      <button class="action-btn">Mark as Paid</button>
-      <button class="action-btn">Change  Address</button>
-      <button class="action-btn cancel">Cancel Order</button>
-      <button class="action-btn success">Missing item sent</button>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="order-timeline">
-  <h2>Timeline</h2>
-
-  <div class="timeline">
-    <div class="timeline-step">
-      <span class="step-label">Order Added:</span>
-      <span class="step-value">24/03/2026</span>
-    </div>
-
-    <div class="timeline-step">
-      <span class="step-label">Checked by Mark:</span>
-      <span class="step-value">24/03/2026</span>
-    </div>
-
-    <div class="timeline-step">
-      <span class="step-label">Dispatched by  Lucian:</span>
-      <span class="step-value">24/03/2026</span>
-    </div>
-
-    <div class="timeline-step">
-      <span class="step-label">Driver name:</span>
-      <span class="step-value">Darryl</span>
-    </div>
-     <div class="action-buttons">
-    <button class="action-btn deliver">Order Delivered</button>
-     <button class="action-btn return">Order returned</button>
-     </div>
-  </div>
-</section>
 
 </body>
 </html>
