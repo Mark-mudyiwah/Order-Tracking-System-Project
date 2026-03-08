@@ -1,13 +1,17 @@
 import { orders } from "../utils/local.js";
 
+ 
 // =========================
 // INITIAL RENDER
 // =========================
 renderOrders();
-
+ 
 // Display current date (requires dayjs)
 document.querySelector('.js-date-container').innerHTML =
   `${dayjs().format('dddd, DD-MMM-YYYY')}`;
+
+
+  
 
 // =========================
 // DOM ELEMENTS

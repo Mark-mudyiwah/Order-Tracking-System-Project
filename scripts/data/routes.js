@@ -1,78 +1,5 @@
 import { routeOrders } from "../utils/local.js";
 
-//console.log(routeOrders)
-
-
-
-
-
-
-/*
-
-const southernRoute = orders.filter(order =>
-    order.address === 'Muizenberg' ||
-    order.address === 'Rondebosch' ||
-    order.address === 'Constantia' ||
-    order.address === 'Athlone' ||
-    order.address === 'Crawford'||
-    order.address === 'Rylands' ||
-    order.address === 'Lansdowne'||
-    order.address === 'Claremont' ||
-    order.address === 'Penlyn'||
-    order.address === 'Wynberg' ||
-    order.address === 'Mowbray'||
-    order.address === 'Surrey Estate'  
-)
-
-
-const northenRoute = orders.filter(order =>
-    order.address === 'Maitland' ||
-    order.address === 'Kensington' ||
-    order.address === 'Goodwood'||
-    order.address === 'Parow' ||
-    order.address === 'Thornton'||
-    order.address === 'Ruyterwatch' ||
-    order.address === 'Townsend'||
-    order.address === 'Monte Vista' ||
-    order.address === 'Epping'||
-    order.address === 'Pinelands'  
-)
-
-const capeTownRoute = orders.filter(order =>
-    order.address === 'Capetown' ||
-    order.address === 'Seapoint' ||
-    order.address === 'Walmer Estate'
-)
-
-const collectionRoute = orders.filter(order =>
-    order.deliveryType === 'Collection' 
-    
-)
-
-
-const westCoastRoute = orders.filter(order =>
-    order.address === 'Sandown' ||
-    order.address === 'Parklands' ||
-    order.address === 'Table View' ||
-    order.address === 'Tableview' ||
-    order.address === 'Flamingo Vlei'||
-    order.address === 'Killarney Gardens' ||
-    order.address === 'Blouberg'||
-    order.address === 'Table Bay' ||
-    order.address === 'Milnerton Ridge'||
-    order.address === 'Sunset' ||
-    order.address === 'De Aan Zitch'||
-    order.address === 'Lagoon'  
-)
-
-
-
-
- */
- 
- 
- 
-
  
 
  
@@ -103,7 +30,7 @@ const northernSuburbs = [
   "Goedemoed", "Amanda Glen", "Aurora", "Clara Anna Fontein", "Langeberg Ridge", "Graanendal", 
   "Pinehurst", "Brackenfell", "Protea Heights", "Vredekloof", "Vredekloof East", "Northpine", 
   "Rouxville", "Ferndale", "Sonkring", "Kleinbron Estate", "Burgundy Estate", "Kraaifontein", 
-  "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights", 
+  "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
   "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft", "Mitchell's Plain","schaapkraal","Strandfontein",
   "Eerste River", "Kleinvlei", "Electric City"
@@ -121,7 +48,7 @@ const westCoastSuburbs = [
 const farWestCoastSuburbs = [
   "Philadelphia", "Morningstar", "Fisantkraal", "Klipheuwel", "Chatsworth", "Atlantis", 
   "Robinvale", "Wesfleur", "Beacon Hill", "Protea Park", "Sherwood", "Avondale Atlantis", 
-  "Mamre", "Pella", "Malmesbury"
+  "Mamre", "Pella", "Malmesbury","Cape Farms"
 ];
 
 const capeTownSuburbs = [
@@ -138,7 +65,7 @@ const stellenStrandSuburbs = [
   "Stellenbosch Central", "Die Boord", "Mostertsdrift", "Idas Valley", "Cloetesville","Kuils River","Kraaifontein",
   "Kayamandi", "Paradyskloof", "Brandwacht", "Welgevonden Estate", "Jamestown", 
   "Kylemore", "Pniel", "Franschhoek",  "Somerset West", "Strand", "Gordon's Bay", "Firgrove", "Macassar", "Sir Lowry's Pass", 
-  "Spanish Farm", "Heldervue", "Greenways","Paarl"
+  "Spanish Farm", "Heldervue", "Greenways","Paarl","Wellington"
 ];
    //STORE ZONES IN ARRAYS
  
@@ -154,6 +81,12 @@ const zoneSuburbs = [
 
 ];
 
+
+const collectionRoute = routeOrders.filter(order =>
+  order.deliveryType === "Collection"
+);
+
+
  function normalizeLocation(value) {
   return value
     .toLowerCase()
@@ -161,30 +94,29 @@ const zoneSuburbs = [
     .trim();
 }
  
-const normalizedZoneSets = zoneSuburbs.map(zoneArray =>
-  new Set(zoneArray.map(suburb => normalizeLocation(suburb)))
-);
- 
-for (let i = 0; i < zoneNames.length; i++) {
+zoneNames.forEach((zoneName, index) => {
 
-  const currentZoneName = zoneNames[i];
-  const currentZoneSet = normalizedZoneSets[i];
+  const suburbs = zoneSuburbs[index];
 
-  const route = routeOrders.filter(order =>
-    currentZoneSet.has(normalizeLocation(order.address))
-  );
+  const route = routeOrders.filter(order => {
 
- if (route.length > 0) {
-    renderRoutes(currentZoneName, route);
+    const orderAddress = normalizeLocation(order.address);
+
+    return suburbs.some(suburb =>
+      normalizeLocation(suburb) === orderAddress
+    );
+
+  });
+
+  if (route.length > 0) {
+    renderRoutes(zoneName, route);
   }
-}
+
+});
 
   // COLLECTION ROUTE
 
 
-const collectionRoute = routeOrders.filter(order =>
-  order.deliveryType === "Collection"
-);
 
 renderRoutes("Collections", collectionRoute);
 

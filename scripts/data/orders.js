@@ -1,4 +1,5 @@
 import { orders, saveToStorage } from "../utils/local.js";
+ import { now } from "../utils/local.js";
 
 console.log(orders);
 
@@ -259,6 +260,7 @@ if (tableElement) {
       if (order) {
         order.driver = selectedDriver;
         order.status = "Dispatched";
+        order.dispatchedTime = now
       }
 
       //  Save + Re-render
@@ -269,42 +271,4 @@ if (tableElement) {
 
   });
 
-}
-/*
-const tableElement = document.querySelector('.js-orders-data-container')
-
-if (tableElement) {
-    tableElement.addEventListener('click', (event) => {
-       
-        const button = event.target.closest('.js-dispatch-button')
-        if (button) {
-
-            const orderId = Number(button.dataset.orderId)
-
-             const actionTdataElem = document.querySelector(`.js-action-td-${orderId}`)
-             const  selectTdataElem = document.querySelector(`.js-select-td-${orderId}`)
-              
-
-            orders.forEach((order) => {
-
-                if (order.id === orderId) {
-
-                 actionTdataElem.classList.add('hide')
-                  
-                  selectTdataElem.classList.add('show')
-                  console.log(button)
-
-                    // order.status = 'Dispatched'
-
-                  //  saveToStorage()
-                  // renderOrdersHTML(orders)
-                   // updateTotals(orders)
-                }
-
-            })
-        }
-
-    })
-}
-
-*/
+}  
