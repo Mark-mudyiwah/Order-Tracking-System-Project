@@ -1,10 +1,7 @@
-import { routeOrders,startAutoLock } from "../utils/local.js";
+import { routeOrders,startAutoLock ,ADMIN_PASSWORD} from "../utils/local.js";
 import { zoneSuburbs,zoneNames,} from "../utils/routes-utils.js";
 
- // DELIVERY ZONES
-
-;
-   //STORE ZONES IN ARRAYS
+ 
  
 
  startAutoLock(ADMIN_PASSWORD,10)

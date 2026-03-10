@@ -1,4 +1,5 @@
-import { orders,saveToStorage,now,searchMatchingArea,ADMIN_PASSWORD} from "../utils/local.js"
+import { orders,saveToStorage,now,ADMIN_PASSWORD,startAutoLock} from "../utils/local.js"
+import { searchMatchingArea } from "../utils/routes-utils.js";
  
 
 startAutoLock(ADMIN_PASSWORD,10)
