@@ -1,11 +1,9 @@
 
-import { orders } from "../utils/local.js";
-import { saveToStorage } from "../utils/local.js";
-import { now} from "../utils/local.js";
-
+import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/local.js";
+ 
 
 // import { getDate } from "./index.js";
- 
+ startAutoLock(ADMIN_PASSWORD,10)
   
 /* =========================
    DASHBOARD TOTALS
@@ -224,4 +222,35 @@ function refreshUI() {
 
 
 
- 
+  
+
+let inactivityTimer;
+
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer);
+
+  inactivityTimer = setTimeout(() => {
+    lockSystem();
+  }, 1 * 60 * 1000); // 5 minutes
+}
+
+
+document.addEventListener("mousemove", resetInactivityTimer);
+document.addEventListener("keydown", resetInactivityTimer);
+document.addEventListener("click", resetInactivityTimer);
+
+resetInactivityTimer();
+
+
+function lockSystem() {
+
+  const password = prompt("🔒 System locked due to inactivity.\n\nEnter admin password:");
+
+  if (password === ADMIN_PASSWORD) {
+    resetInactivityTimer();
+    alert("✅ Access restored");
+  } else {
+    alert("❌ Incorrect password");
+    lockSystem(); // keep asking until correct
+  }
+}

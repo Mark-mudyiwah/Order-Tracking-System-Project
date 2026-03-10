@@ -44,14 +44,7 @@ h2{
   border-bottom:none;
 }
 
-.label{
-  
-}
-
-.value{
-  
-}
-
+ 
 
 /* ACTION BUTTONS */
 
@@ -70,14 +63,52 @@ h2{
   cursor:pointer;
   background:#1e88e5;
   color:white;
-  font-weight:600;
+  
   transition:0.2s;
 }
+.action-input{
+ padding:8px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+   border:1px solid black;
+  color:black;
+  outline: none;
+  display: none;
+}
+.image-input{
+ padding:8px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+   border:1px solid black;
+  color:black;
+  outline: none;
+
+}
+
+.action-select{
+ padding:8px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+   border:1px solid black;
+  color:black;
+  outline: none;
+}
+
+.confirm-payment{
+  background: green;
+}
+
 
 .action-btn:hover{
   opacity:0.85;
 }
 
+.action-input:focus{
+  border: 1px solid blue;
+}
 .action-btn.uplift{
   background:#0c84a8;
 }
@@ -139,3 +170,9 @@ gap: 30px;
     color: #1e88e5;
     font-weight: 700;
 }
+
+.show{
+  display: inline;
+}
+/* Upload label and input */
+ 

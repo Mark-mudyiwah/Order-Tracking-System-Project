@@ -1,7 +1,10 @@
-import { orders, saveToStorage } from "../utils/local.js";
- import { now } from "../utils/local.js";
+import { orders, saveToStorage,now,startAutoLock,ADMIN_PASSWORD} from "../utils/local.js";
+ 
 
 console.log(orders);
+startAutoLock(ADMIN_PASSWORD,10)
+
+
 
 //DOM elements
 
@@ -207,7 +210,7 @@ if (resetFilterButton) {
 renderOrdersHTML(orders);
 updateTotals(orders);
 
-
+ 
 
 const tableElement = document.querySelector('.js-orders-data-container');
 
