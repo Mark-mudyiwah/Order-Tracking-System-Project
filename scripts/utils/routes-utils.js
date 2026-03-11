@@ -3,7 +3,7 @@ export const deliveryZones = {
 southernSuburbs :[
   "Observatory", "Mowbray", "Rosebank", "Little Mowbray", "Rondebosch", "Rondebosch East", 
   "Newlands", "Bishopscourt", "Claremont", "Claremont Upper", "Kenilworth", "Kenilworth Upper", 
-  "Harfield Village", "Wetton", "Lansdowne", "Belgravia", "Athlone", "Rylands", "Crawford", 
+  "Harfield Village", "Wetton", "Lansdowne", "Belgravia", "Athlone", "Rylands", "Crawford","Kenwyn",
   "Penlyn", "Hazendal", "Wynberg", "Wynberg Upper", "Plumstead", "Diep River", "Southfield", 
   "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
   "Lakeside", "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
@@ -28,7 +28,7 @@ southernSuburbs :[
   "Rouxville", "Ferndale", "Sonkring", "Kleinbron Estate", "Burgundy Estate", "Kraaifontein", 
   "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
-  "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft", "Mitchell's Plain","schaapkraal","Strandfontein",
+  "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft",
   "Eerste River", "Kleinvlei", "Electric City"
 ],
 
@@ -62,6 +62,11 @@ southernSuburbs :[
   "Kayamandi", "Paradyskloof", "Brandwacht", "Welgevonden Estate", "Jamestown", 
   "Kylemore", "Pniel", "Franschhoek",  "Somerset West", "Strand", "Gordon's Bay", "Firgrove", "Macassar", "Sir Lowry's Pass", 
   "Spanish Farm", "Heldervue", "Greenways","Paarl","Wellington"
+],
+
+
+farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal",
+
 ]
 
 }
@@ -74,6 +79,7 @@ export const zoneSuburbs = [
    deliveryZones.capeTownSuburbs,
    deliveryZones.farWestCoastSuburbs,
    deliveryZones.stellenStrandSuburbs,
+   deliveryZones.farNorthenSurbubs
   
 ];
 
@@ -83,7 +89,8 @@ export const zoneNames = [
   "West Coast",
   "Cape Town",
   "Far West Coast",
-  "Stellenbosch & Strand"
+  "Stellenbosch & Strand",
+  "Far Northen Surbubs"
 ];
 
 /*function searchMatchingArea(address) {
