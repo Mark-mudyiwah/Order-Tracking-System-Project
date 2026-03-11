@@ -6,10 +6,10 @@ southernSuburbs :[
   "Harfield Village", "Wetton", "Lansdowne", "Belgravia", "Athlone", "Rylands", "Crawford","Kenwyn",
   "Penlyn", "Hazendal", "Wynberg", "Wynberg Upper", "Plumstead", "Diep River", "Southfield", 
   "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
-  "Lakeside", "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
-  "Grassy Park", "Lotus River", "Pelican Park", "Zeekoevlei", "Muizenberg", "Marina da Gama","Fisherman's Village",
-  "Capricorn", "St James", "Kalk Bay", "Fish Hoek", "Sunny Cove", "Glencairn", "Simons Town", 
-  "Welcome Glen", "Noordhoek", "Sun Valley", "Capri", "Kommetjie", "Ocean View", "Masiphumelele", 
+  "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
+  "Lotus River",
+  "Capricorn", "St James", "Sunny Cove", "Glencairn",
+  "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
   "Scarborough", "Red Hill","Belthorn Estate","Ottery"
 ],
 
@@ -53,7 +53,7 @@ southernSuburbs :[
   "Bo-Kaap", "De Waterkant", "Victoria & Alfred Waterfront", "WaterFront","Granger Bay", "Woodstock", 
   "Upper Woodstock", "Salt River", "Walmer Estate", "University Estate", "Green Point", 
   "Three Anchor Bay", "Mouille Point", "Sea Point", "Fresnaye", "Bantry Bay", "Clifton", 
-  "Camps Bay", "Bakoven", "Oudekraal", "Hout Bay", "Imizamo Yethu", "Llandudno",
+  "Camps Bay", "Bakoven", "Oudekraal", "Imizamo Yethu", "Llandudno",
 ],
 
  
@@ -67,6 +67,13 @@ southernSuburbs :[
 
 farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal",
 
+],
+
+farSouthernSurbubs :[
+ "Ocean View", "Masiphumelele","Kalk Bay", "Fish Hoek","Muizenberg","Westlake","Pelican Park","Eagle Park","Zeekoevlei", "Hout Bay","Simon's town",
+  "Grassy Park", "Marina da Gama","Fisherman's Village", "Lakeside","Noordhoek",
+ 
+
 ]
 
 }
@@ -79,7 +86,8 @@ export const zoneSuburbs = [
    deliveryZones.capeTownSuburbs,
    deliveryZones.farWestCoastSuburbs,
    deliveryZones.stellenStrandSuburbs,
-   deliveryZones.farNorthenSurbubs
+   deliveryZones.farNorthenSurbubs,
+   deliveryZones.farSouthernSurbubs,
   
 ];
 
@@ -90,7 +98,8 @@ export const zoneNames = [
   "Cape Town",
   "Far West Coast",
   "Stellenbosch & Strand",
-  "Far Northen Surbubs"
+  "Far Northen Surbubs",
+   "Far Southern Surbubs"
 ];
 
 /*function searchMatchingArea(address) {
