@@ -10,7 +10,7 @@ southernSuburbs :[
   "Grassy Park", "Lotus River", "Pelican Park", "Zeekoevlei", "Muizenberg", "Marina da Gama","Fisherman's Village",
   "Capricorn", "St James", "Kalk Bay", "Fish Hoek", "Sunny Cove", "Glencairn", "Simons Town", 
   "Welcome Glen", "Noordhoek", "Sun Valley", "Capri", "Kommetjie", "Ocean View", "Masiphumelele", 
-  "Scarborough", "Red Hill","Belthorn Estate"
+  "Scarborough", "Red Hill","Belthorn Estate","Ottery"
 ],
 
   northernSuburbs :[
