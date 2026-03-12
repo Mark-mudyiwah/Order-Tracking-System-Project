@@ -1,16 +1,21 @@
 
 import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/local.js";
- 
+
 
 // import { getDate } from "./index.js";
- startAutoLock(ADMIN_PASSWORD,10)
+ startAutoLock(ADMIN_PASSWORD,30)
   
 /* =========================
    DASHBOARD TOTALS
 ========================= */
 function updateDashboardTotals() {
-
-  const totalOrders = orders.length;
+ 
+  const todaysOrders = orders.filter(order => 
+    order.status ==='Processing'|| order.status === 'Awaiting Payment'
+   // dayjs(order.dateAdded).isSame(now, "day") // compare only the day
+  );
+  
+  console.log(todaysOrders)
 
   const paidOrders = orders.filter(order =>
     order.status === 'Processing'
@@ -35,7 +40,7 @@ function updateDashboardTotals() {
     }
   }
 
-  updateEachQuantity('.js-total-orders', totalOrders);
+  updateEachQuantity('.js-total-orders', todaysOrders.length);
   updateEachQuantity('.js-active-orders', paidOrders.length);
   updateEachQuantity('.js-collection-orders', pickUpOrders.length);
   updateEachQuantity('.js-unpaid-orders', unPaidOrders.length);
