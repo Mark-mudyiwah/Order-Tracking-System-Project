@@ -11,9 +11,7 @@ import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/
 function updateDashboardTotals() {
 
   const totalOrders = orders.length
-  //filter(order =>
-   // dayjs(order.dateAdded).format('DD-MMM-YYYY') = dayjs(now).format('DD-MMM-YYYY')
-  //)
+   
 
   const paidOrders = orders.filter(order =>
     order.status === 'Processing'
