@@ -10,7 +10,9 @@ import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/
 ========================= */
 function updateDashboardTotals() {
 
-  const totalOrders = orders.length;
+  const totalOrders = orders.filter(order =>
+    dayjs(order.dateAdded).format('DD-MMM-YYYY') = dayjs(now).format('DD-MMM-YYYY')
+  )
 
   const paidOrders = orders.filter(order =>
     order.status === 'Processing'
@@ -35,7 +37,7 @@ function updateDashboardTotals() {
     }
   }
 
-  updateEachQuantity('.js-total-orders', totalOrders);
+  updateEachQuantity('.js-total-orders', totalOrders.length);
   updateEachQuantity('.js-active-orders', paidOrders.length);
   updateEachQuantity('.js-collection-orders', pickUpOrders.length);
   updateEachQuantity('.js-unpaid-orders', unPaidOrders.length);
