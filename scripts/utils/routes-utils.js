@@ -29,7 +29,7 @@ southernSuburbs :[
   "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
   "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft",
-  "Eerste River", "Kleinvlei", "Electric City"
+  "Eerste River", "Kleinvlei", "Electric City","Ravensmead"
 ],
 
   westCoastSuburbs :[
