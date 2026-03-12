@@ -37,7 +37,7 @@ function updateDashboardTotals() {
     }
   }
 
-  updateEachQuantity('.js-total-orders', totalOrders.length);
+  updateEachQuantity('.js-total-orders', totalOrders.length|| 0);
   updateEachQuantity('.js-active-orders', paidOrders.length);
   updateEachQuantity('.js-collection-orders', pickUpOrders.length);
   updateEachQuantity('.js-unpaid-orders', unPaidOrders.length);
