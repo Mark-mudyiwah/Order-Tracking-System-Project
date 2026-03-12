@@ -2,13 +2,14 @@
 import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/local.js";
 
 
-// import { getDate } from "./index.js";
+ 
  startAutoLock(ADMIN_PASSWORD,30)
   
 /* =========================
    DASHBOARD TOTALS
 ========================= */
 function updateDashboardTotals() {
+
  
   const todaysOrders = orders.filter(order => 
     order.status ==='Processing'|| order.status === 'Awaiting Payment'
@@ -16,7 +17,7 @@ function updateDashboardTotals() {
   );
   
   console.log(todaysOrders)
-
+ 
   const paidOrders = orders.filter(order =>
     order.status === 'Processing'
   );
