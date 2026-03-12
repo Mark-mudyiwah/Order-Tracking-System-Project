@@ -17,7 +17,7 @@ southernSuburbs :[
   "Bellville", "Bellville South","Pinelands" ,"Boston", "Oakdale", "Parow Valley", "Hoheizen", "De La Haye", 
   "Stellenridge", "Stellenryk", "Chrismar", "Belhar", "University Estate Bellville", "Bellville Central", 
   "Parow", "Parow North", "Parow East", "Glenlily", "Oostersee", "Ravensmead", "Avondale Parow", 
-  "De Tijger", "Fairfield Estate", "Goodwood", "Goodwood Estate", "Townsend Estate", "Ruyterwacht", 
+  "De Tijger", "Fairfield Estate", "Goodwood", "Goodwood Estate", "Townsend Estate", "Ruyterwacht","Kensington","Factreton",
   "Vasco Estate", "Glenwood", "Elsies River", "Connaught Estate", "Heideveld", "Bonteheuwel","Charlesville",
   "Plattekloof", "Plattekloof Glen", "Panorama", "Welgelegen", "Baronetcy Estate", "Kleinbosch", 
   "Welgemoed", "Van Riebeeckshof", "De Bron", "Door De Kraal", "Ridgeworth", "Tygerdal","Riverton",
