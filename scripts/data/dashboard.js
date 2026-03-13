@@ -12,8 +12,8 @@ function updateDashboardTotals() {
 
  
   const todaysOrders = orders.filter(order => 
-    order.status ==='Processing'|| order.status === 'Awaiting Payment'
-   // dayjs(order.dateAdded).isSame(now, "day") // compare only the day
+   // order.status ==='Processing'|| order.status === 'Awaiting Payment'
+   dayjs(order.dateAdded).isSame(now, "day") // compare only the day
   );
   
   console.log(todaysOrders)
