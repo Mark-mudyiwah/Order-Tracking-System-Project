@@ -115,6 +115,7 @@ function renderOrdersHTML(targetOrders) {
                     <option value="Muawiya">Muawiya</option>
                     <option value="Antony">Antony</option>
                     <option value="Magdeen">Magdeen</option>
+                    <option value="Factory Driver">Factory Driver</option>
                     </select>
 
                   <button class="dispatch-button js-confirm-dispatch"
