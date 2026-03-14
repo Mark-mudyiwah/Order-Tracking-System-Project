@@ -26,7 +26,12 @@ const inCompleteOrdersElement = document.querySelector('.js-incomplete-orders');
 
 function updateTotals(targetOrders) {
 
-    const totalOrders = targetOrders.length;
+    const totalOrders = targetOrders.filter(order=>{
+        const isToday =dayjs(order.dateAdded).isSame(now,"day")
+        const isPendingFromPrevious = 
+        order.status ==="awaiting-payment"||
+        order.status ==="Processing"
+    })
 
     const checkedOrders = targetOrders.filter(order =>
         order.status === 'checked'
@@ -48,7 +53,7 @@ function updateTotals(targetOrders) {
         order.partial === true
     ).length;
 
-    totalOrdersElement.innerHTML = totalOrders;
+    totalOrdersElement.innerHTML = totalOrders.length;
     checkedOrdersElement.innerHTML = checkedOrders;
     unPaidOrdersElement.innerHTML = unPaidOrders;
     collectonOrdersElement.innerHTML = collections;
