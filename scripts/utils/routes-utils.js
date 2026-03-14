@@ -10,7 +10,7 @@ southernSuburbs :[
   "Lotus River",
   "Capricorn", "St James", "Sunny Cove", "Glencairn",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
-  "Scarborough", "Red Hill","Belthorn Estate","Ottery"
+  "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park"
 ],
 
   northernSuburbs :[
@@ -29,7 +29,7 @@ southernSuburbs :[
   "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
   "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft",
-  "Eerste River", "Kleinvlei", "Electric City","Ravensmead"
+  "Eerste River", "Kleinvlei", "Electric City","Ravensmead","Manenberg"
 ],
 
   westCoastSuburbs :[
