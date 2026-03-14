@@ -11,10 +11,14 @@ import { orders,saveToStorage,ADMIN_PASSWORD,now,startAutoLock } from "../utils/
 function updateDashboardTotals() {
 
  
-  const todaysOrders = orders.filter(order => 
-   // order.status ==='Processing'|| order.status === 'Awaiting Payment'
-   dayjs(order.dateAdded).isSame(now, "day") // compare only the day
-  );
+    const todaysOrders = orders.filter(order=>{
+        const isToday =dayjs(order.dateAdded).isSame(now,"day")
+        const isPendingFromPrevious = 
+        order.status ==="awaiting-payment"||
+        order.status ==="Processing"
+
+         return isToday || isPendingFromPrevious;
+    })
   
   console.log(todaysOrders)
  

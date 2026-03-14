@@ -31,6 +31,7 @@ function updateTotals(targetOrders) {
         const isPendingFromPrevious = 
         order.status ==="awaiting-payment"||
         order.status ==="Processing"
+         return isToday || isPendingFromPrevious;
     })
 
     const checkedOrders = targetOrders.filter(order =>
