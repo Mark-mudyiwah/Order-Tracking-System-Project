@@ -8,9 +8,7 @@ import { zoneSuburbs,zoneNames,} from "../utils/routes-utils.js";
 
   
 
-const collectionRoute = routeOrders.filter(order =>
-  order.deliveryType === "Collection"||order.address ==="Instore"
-);
+ 
 
 
  function normalizeLocation(value) {
@@ -44,7 +42,7 @@ zoneNames.forEach((zoneName, index) => {
 
 
 
-renderRoutes("Collections", collectionRoute);
+ 
 
  
 

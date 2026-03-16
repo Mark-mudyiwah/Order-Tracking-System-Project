@@ -76,7 +76,7 @@ farSouthernSurbubs :[
 
 ],
 Collections:[
-  "Instore","Goodhope","Pickup"
+  "Instore","Goodhope","Pickup","Collect","Instore-Pickup"
 ]
 
 }
@@ -91,6 +91,7 @@ export const zoneSuburbs = [
    deliveryZones.stellenStrandSuburbs,
    deliveryZones.farNorthenSurbubs,
    deliveryZones.farSouthernSurbubs,
+   deliveryZones.Collections
   
 ];
 
@@ -102,7 +103,8 @@ export const zoneNames = [
   "Far West Coast",
   "Stellenbosch & Strand",
   "Far Northen Surbubs",
-   "Far Southern Surbubs"
+   "Far Southern Surbubs",
+   "Collections"
 ];
 
 /*function searchMatchingArea(address) {
