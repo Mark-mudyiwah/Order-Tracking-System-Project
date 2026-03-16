@@ -10,7 +10,7 @@ southernSuburbs :[
   "Lotus River",
   "Capricorn", "St James", "Sunny Cove", "Glencairn",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
-  "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park"
+  "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven"
 ],
 
   northernSuburbs :[
