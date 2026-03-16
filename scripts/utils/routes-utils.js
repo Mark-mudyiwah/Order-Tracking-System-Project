@@ -74,6 +74,9 @@ farSouthernSurbubs :[
   "Grassy Park", "Marina da Gama","Fisherman's Village", "Lakeside","Noordhoek",
  
 
+],
+Collections:[
+  "Instore","Goodhope","Pickup"
 ]
 
 }

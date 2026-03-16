@@ -9,7 +9,7 @@ import { zoneSuburbs,zoneNames,} from "../utils/routes-utils.js";
   
 
 const collectionRoute = routeOrders.filter(order =>
-  order.deliveryType === "Collection"
+  order.deliveryType === "Collection"||order.address ==="Instore"
 );
 
 
