@@ -7,7 +7,7 @@ southernSuburbs :[
   "Penlyn", "Hazendal", "Wynberg", "Wynberg Upper", "Plumstead", "Diep River", "Southfield", 
   "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
   "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
-  "Lotus River",
+  "Lotus River","Surrey Estate",
   "Capricorn", "St James", "Sunny Cove", "Glencairn",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
   "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven"
