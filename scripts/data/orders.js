@@ -46,8 +46,10 @@ function updateTotals(targetOrders) {
         order.deliveryType === 'Collection'
     ).length;
 
-    const dispatched = targetOrders.filter(order =>
-        order.status === 'Dispatched'&& dayjs(order.dispatchTime).isSame(now,"day")
+    const dispatched = targetOrders.filter(order =>{
+        return(
+        order.status === 'Dispatched'&& dayjs(order.dispatchTime).isSame(now,"day"))
+    }
     ).length;
 
     const incomplete = targetOrders.filter(order =>
