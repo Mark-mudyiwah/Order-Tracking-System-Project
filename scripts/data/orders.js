@@ -47,7 +47,7 @@ function updateTotals(targetOrders) {
     ).length;
 
     const dispatched = targetOrders.filter(order =>
-        order.status === 'Dispatched'
+        order.status === 'Dispatched'&& dayjs(order.dispatchTime).isSame(now,"day")
     ).length;
 
     const incomplete = targetOrders.filter(order =>
