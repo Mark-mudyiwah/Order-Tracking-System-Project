@@ -1,7 +1,16 @@
 import { orders, saveToStorage,now,startAutoLock,ADMIN_PASSWORD} from "../utils/local.js";
+
+    const todaysOrders = orders.filter(order=>{
+        const isToday =dayjs(order.dateAdded).isSame(now,"day")
+        const isPendingFromPrevious = 
+        order.status !=="dispatched"
+       
+
+         return isToday || isPendingFromPrevious;
+    })
  
 
-console.log(orders);
+console.log(todaysOrders);
 startAutoLock(ADMIN_PASSWORD,10)
 
 
@@ -216,8 +225,8 @@ if (resetFilterButton) {
 }
 
 //initial load
-renderOrdersHTML(orders);
-updateTotals(orders);
+renderOrdersHTML(todaysOrders);
+updateTotals(todaysOrders);
 
  
 
