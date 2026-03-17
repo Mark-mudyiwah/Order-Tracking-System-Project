@@ -8,7 +8,7 @@ southernSuburbs :[
   "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
   "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
   "Lotus River","Surrey Estate",
-  "Capricorn", "St James", "Sunny Cove", "Glencairn","Sybrand park",
+  "Capricorn", "St James", "Sunny Cove", "Glencairn","Sybrand park","Primrose park",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
   "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven"
 ],
@@ -25,11 +25,11 @@ southernSuburbs :[
   "Sonstraal", "Sonstraal Heights", "Uitzicht", "Bonnie Brae", "Eversdal", "Kenridge", "Vygeboom", 
   "Goedemoed", "Amanda Glen", "Aurora", "Clara Anna Fontein", "Langeberg Ridge", "Graanendal", 
   "Pinehurst", "Brackenfell", "Protea Heights", "Vredekloof", "Vredekloof East", "Northpine", 
-  "Rouxville", "Ferndale", "Sonkring", "Kleinbron Estate", "Burgundy Estate", "Kraaifontein","Richwood" ,
+  "Rouxville", "Ferndale", "Sonkring", "Kleinbron Estate", "Burgundy Estate","Richwood" ,
   "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
   "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft",
-  "Eerste River", "Kleinvlei", "Electric City","Ravensmead","Manenberg","Primrose park",
+  "Eerste River", "Kleinvlei", "Electric City","Ravensmead","Manenberg",
 ],
 
   westCoastSuburbs :[
