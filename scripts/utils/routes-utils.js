@@ -8,7 +8,7 @@ southernSuburbs :[
   "Heathfield", "Constantia", "Constantia Village", "Kreupelbosch", "Meadowridge", "Bergvliet", 
   "Tokai", "Kirstenhof", "Steenberg", "Retreat", "Lavender Hill", "Seawinds", 
   "Lotus River","Surrey Estate",
-  "Capricorn", "St James", "Sunny Cove", "Glencairn",
+  "Capricorn", "St James", "Sunny Cove", "Glencairn","Sybrand park",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
   "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven"
 ],
@@ -29,7 +29,7 @@ southernSuburbs :[
   "Windsor Park", "Fountain Village", "Peerless Park", "Zoo Park", "Langeberg Heights","Oakdene",
   "Joostenbergvlakte", "Airport Industria", "Airport City", "Blackheath", "Saxenburg Park", 
   "Epping", "Thornton", "Ndabeni", "Maitland", "Blue Downs", "Mfuleni", "Delft",
-  "Eerste River", "Kleinvlei", "Electric City","Ravensmead","Manenberg"
+  "Eerste River", "Kleinvlei", "Electric City","Ravensmead","Manenberg","Primrose park",
 ],
 
   westCoastSuburbs :[
@@ -65,7 +65,7 @@ southernSuburbs :[
 ],
 
 
-farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal",
+farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal","lentegeur","Westridge"
 
 ],
 
