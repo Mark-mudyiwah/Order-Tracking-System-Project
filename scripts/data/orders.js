@@ -3,7 +3,7 @@ import { orders, saveToStorage,now,startAutoLock,ADMIN_PASSWORD} from "../utils/
     const todaysOrders = orders.filter(order=>{
         const isToday =dayjs(order.dateAdded).isSame(now,"day")
         const isPendingFromPrevious = 
-        order.status !=="dispatched"
+        order.status !=="Dispatched"
        
 
          return isToday || isPendingFromPrevious;
