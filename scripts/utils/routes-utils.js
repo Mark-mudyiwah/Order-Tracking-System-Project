@@ -10,7 +10,7 @@ southernSuburbs :[
   "Lotus River","Surrey Estate",
   "Capricorn", "St James", "Sunny Cove", "Glencairn","Sybrand park","Primrose park",
   "Welcome Glen",  "Sun Valley", "Capri", "Kommetjie",
-  "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven"
+  "Scarborough", "Red Hill","Belthorn Estate","Ottery","Hanover Park","Greenhaven","Newfields"
 ],
 
   northernSuburbs :[
@@ -65,7 +65,7 @@ southernSuburbs :[
 ],
 
 
-farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal","lentegeur","Westridge"
+farNorthenSurbubs :["Strandfontein","Mitchell's Plain", "schaapkraal","lentegeur","Westridge","Woodlands"
 
 ],
 
